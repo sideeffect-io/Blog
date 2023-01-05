@@ -2,12 +2,12 @@
   --font-family-heading: 'Poppins', sans-serif;
   --font-family-paragraph: Helvetica, sans-serif;
   --font-family-monospace: monospace;
-  --base-color: #1A1A1A;
-  --base-offset-color: #eaeaea;
-  --highlight-color: #539C9E;
-  --heading-color: #C3C5BE;
-  --text-color: #A2A49E;
-  --dot-color: #539C9E; }
+  --base-color: #FFFFFF;
+  --base-offset-color: #FFFFFF;
+  --highlight-color: #56ADAE;
+  --heading-color: #373930;
+  --text-color: #373930;
+  --dot-color: #56ADAE; }
 
 body, html {
   margin: 0;
@@ -511,7 +511,10 @@ ul.pagination {
 
 .highlight {
   background: #1F1F24;
-  font-family: monospace; }
+  font-family: monospace;
+  border: 3px solid #539C9E;
+  border-radius: 12px;
+  margin: 30px; }
 
 .highlight .hll {
   background-color: #ffffcc;

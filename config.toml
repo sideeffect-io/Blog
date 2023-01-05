@@ -3,7 +3,7 @@ languageCode = "en-us"
 theme = "hugo-winston-theme"
 themesDir = "themes"
 title = "Side Effect"
-paginate = 5
+paginate = 3
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 pygmentsUseClasses = true
@@ -14,19 +14,19 @@ pygmentsUseClasses = true
     min = "0.55.0"
 
 [params]
-  google_analytics_id = ""
+  google_analytics_id = "UA-109460106-1"
   twitter_handle = "@nakodark"
   showAuthorOnHomepage = true
   showAuthorOnPosts = false
   showPostsOnHomepage = true
   addDot = true
   addFrame = true
-  highlightColor = '#539C9E'
-  baseColor = "#1A1A1A"
-  baseOffsetColor = "#eaeaea"
-  headingColor = "#C3C5BE"
-  textColor = "#A2A49E"
-  dotColor = "#539C9E"
+  highlightColor = "#56ADAE" # side effect green
+  baseColor = "#FFFFFF"
+  baseOffsetColor = "#FFFFFF"
+  headingColor = "#373930" # side effect dark gray
+  textColor = "#373930" # side effect dark gray
+  dotColor = "#56ADAE" # side effect green
 
 # markdown config settings https://gohugo.io/getting-started/configuration-markup/#goldmark
 [markup]
