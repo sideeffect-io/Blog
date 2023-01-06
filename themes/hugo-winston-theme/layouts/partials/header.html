@@ -1,5 +1,24 @@
 <div class='header'>
-  <a class="header-logo" href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>
+  <table>
+    <tr>
+      <th>
+        <a class="header-logo" href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>
+      </th>
+{{ if .Site.Data.social.links }}
+      <th style="text-align: right;">
+  <div class="footer-social">
+    {{ range .Site.Data.social.links }}
+    <span class="social-icon social-icon-{{ .name | urlize }}">
+      <a href="{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener">
+        <img src="{{ .image | relURL }}" width="24" height="24" alt="{{ .name }}"/>
+      </a>
+    </span>
+    {{ end }}
+  </div>
+  {{ end }}
+      </th>
+    </tr>
+  </table>
   <div class="menu-main">
     <ul>
       {{ $currentPage := . }}

@@ -1,27 +1,6 @@
-<div>
-  <table width="100%">
-    <tr>
-      <th style="text-align: left;">
   <div class="author author-large">
     <img width="49" class="author-image" src="{{ .Site.Data.author.image | relURL }}" alt="{{ .Site.Data.author.name }}" />
     <span class="author-name">{{ .Site.Data.author.name }}</span>
     <span class="author-title dot">{{ .Site.Data.author.title }}</span>
   </div>
-      </th>
-  {{ if .Site.Data.social.links }}
-      <th style="text-align: right;">
-  <div class="footer-social">
-    {{ range .Site.Data.social.links }}
-    <span class="social-icon social-icon-{{ .name | urlize }}">
-      <a href="{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener">          
-        <img src="{{ .image | relURL }}" width="24" height="24" alt="{{ .name }}"/>
-      </a>
-    </span>
-    {{ end }}
-  </div>
-  {{ end }}
-      </th>
-    </tr>
-  </table>
-</div>
 
