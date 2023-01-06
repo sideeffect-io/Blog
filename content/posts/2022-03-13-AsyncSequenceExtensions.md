@@ -2,7 +2,7 @@
 title: AsyncSequence extensions
 date: 2022-03-21
 description: Swift 5.5 introduced structured concurrency, and with it came AsyncSequence, a new way to provide a flow of values over time. Wait, what? Isn't this what Combine is all about? From Apple, "The Combine framework provides a declarative Swift API for processing values over time". Are these technologies similar? Interchangeable? Well, sort of! In this article we will explore the differences and similarities between them and we will go over a repo that brings Combine-like operators to AsyncSequence.
-tags: open source, language, reactive programming, functional programming
+categories: Concurrency
 image: images/2022-03-13-AsyncSequenceExtensions/header.jpg
 ---
 

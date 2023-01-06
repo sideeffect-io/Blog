@@ -14,6 +14,11 @@
       "name": "linkedin",
       "url": "https://www.linkedin.com/in/twittemb/",
       "image": "images/social/linkedin.svg"
+    }, 
+    {
+      "name": "rss",
+      "url": "index.xml",
+      "image": "images/social/rss.svg"
     }
   ]
 }

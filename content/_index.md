@@ -1,6 +1,8 @@
 ---
-title: Side Effect, where we speak mobile architecture
+title: Everything Swift
 description: As a freelancer, Side Effect is the company I created to offer my architecture expertise to companies. 
 ---
 
-The hallway smelt of boiled cabbage and old rag mats. At one end of it a coloured poster, too large for indoor display, had been tacked to the wall. It depicted simply an enormous face, more than a metre wide: the face of a man of about forty-five, with a heavy black moustache and ruggedly handsome features. Winston made for the stairs. It was no use trying the lift. 
+As a seasoned software architect with extensive experience, I founded Side Effect to provide top-notch architectural services to companies seeking mobile development expertise.
+Throughout my career working in both small and large businesses, I have faced various challenges. In this blog, I share some of my experiences and lessons learned. I hope you 
+find it enjoyable to read.
