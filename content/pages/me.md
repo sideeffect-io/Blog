@@ -37,7 +37,7 @@ I also like to fly drones and ride bikes along the beach here in Normandy, Franc
 
 This talk is about using RxSwift and the Coordinator pattern as a way to organise the navigation within an iOS application. You can find the slides [here](/files/cocoaheads.pdf).
 
-### **[Frenkit](https://frenchkit.fr) Paris, September 2022**
+### **[Frenchkit](https://frenchkit.fr) Paris, September 2022**
 
 > "Swift concurrency + state machines: the path to modern and reliable features".
 

@@ -117,15 +117,8 @@ p {
   font-family: var(--font-family-paragraph);
   font-size: 18px;
   line-height: 24px; }
-
-ol,
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none; }
-  ol li,
-  ul li {
-    list-style: none; }
+  p .toto {
+    color: blue; }
 
 .content {
   font-size: 18px; }
@@ -233,7 +226,12 @@ ul {
   .footnotes ol li {
     list-style: decimal; }
 
+.toto {
+  color: red;
+  font-weight: bold; }
+
 .intro {
+  padding: 30px;
   margin-bottom: 60px; }
   .intro h1 {
     font-size: 48px;
@@ -283,8 +281,7 @@ ul {
       font-size: 18px;
       line-height: 26px; } }
   .summary .summary-date {
-    font-weight: bold;
-    color: var(--heading-color); }
+    font-weight: bold; }
   .summary .summary-title {
     margin: 16px 0 16px 0;
     width: 80%;

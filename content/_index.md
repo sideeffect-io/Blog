@@ -1,5 +1,5 @@
 ---
-title: Everything Swift
+title: Side Effect
 description: As a freelancer, Side Effect is the company I created to offer my architecture expertise to companies. 
 ---
 

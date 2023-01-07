@@ -14,20 +14,15 @@ h3 {
   color: var(--heading-color);
   font-family: var(--font-family-heading);
 }
+
 p {
   color: var(--text-color);
   font-family: var(--font-family-paragraph);
   font-size: 18px;
   line-height: 24px;
-}
 
-ol,
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  li {
-    list-style: none;
+  .toto {
+    color: blue;
   }
 }
 
@@ -165,4 +160,9 @@ ul {
       list-style: decimal;
     }
   }
+}
+
+.toto {
+  color: red;
+  font-weight: bold;
 }
