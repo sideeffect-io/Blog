@@ -9,6 +9,14 @@ menu:
 
 Here's a list of Open Source projects I contribute to on a regular basis:
 
+# Funny Boum
+
+* Summary: Classic Minesweeper game… with a twisted sense of humor.
+Funny Boum reinvents the legendary puzzle with fast gameplay, special modes, and retro vibes.
+I created this as part of my hands-on learning with Codex and vibe coding.
+* GitHub: https://github.com/sideeffect-io/FunnyBoum
+* Support page: https://sideeffect.io/files/support/funnyboum/support.html
+
 # AsyncExtensions
 
 * Summary: `AsyncExtensions` aims to mimic Swift Combine operators for async sequences.

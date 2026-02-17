@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Funny Boum — Support</title>
+  <meta name="description" content="Get help with Funny Boum. FAQs, troubleshooting, and contact information." />
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --card: #12141b;
+      --text: #e8e8ea;
+      --muted: #a6a6ad;
+      --link: #7dd3fc;
+      --border: rgba(255,255,255,0.08);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7f7fb;
+        --card: #ffffff;
+        --text: #101114;
+        --muted: #4b5563;
+        --link: #0369a1;
+        --border: rgba(0,0,0,0.08);
+      }
+    }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .wrap {
+      max-width: 920px;
+      padding: 28px 18px;
+      margin: 0 auto;
+    }
+    h1 { font-size: 32px; margin-bottom: 6px; }
+    .subtitle { color: var(--muted); margin-top: 0; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      margin-top: 16px;
+    }
+    h2 { font-size: 18px; margin-top: 0; }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .kvs {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 8px 12px;
+      font-size: 14px;
+    }
+    .kvs div:nth-child(odd) { color: var(--muted); }
+    details {
+      border-top: 1px solid var(--border);
+      padding: 10px 0;
+    }
+    details:first-child { border-top: none; }
+    summary { cursor: pointer; font-weight: 600; list-style: none; }
+    summary::-webkit-details-marker { display: none; }
+    footer {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Funny Boum Support</h1>
+    <p class="subtitle">Help, troubleshooting, and contact information.</p>
+
+    <div class="card">
+      <h2>Contact Support</h2>
+      <p>
+        Need help? Email us and we’ll get back to you as soon as possible.
+      </p>
+
+      <div class="kvs">
+        <div>Email</div>
+        <div><a href="mailto:thibault@sideeffect.io?subject=Funny%20Boum%20Support">thibault@sideeffect.io</a></div>
+
+        <div>Response time</div>
+        <div>Typically within 24–72 hours (Mon–Fri).</div>
+
+        <div>Time zone</div>
+        <div>Europe/Paris</div>
+
+        <div>Languages</div>
+        <div>English, French</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Troubleshooting</h2>
+      <ol>
+        <li>Update to the latest version of Funny Boum.</li>
+        <li>Force close and reopen the app.</li>
+        <li>Restart your iPhone.</li>
+        <li>Reinstall the app if the issue persists.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>Frequently Asked Questions</h2>
+
+      <details>
+        <summary>How do I report a bug?</summary>
+        <p>
+          Email <a href="mailto:thibault@sideeffect.io?subject=Funny%20Boum%20Bug%20Report">thibault@sideeffect.io</a>
+          with a description of the issue and steps to reproduce.
+        </p>
+      </details>
+
+      <details>
+        <summary>Does Funny Boum collect personal data?</summary>
+        <p>
+          No. Funny Boum does not collect, store, or transmit any personal data.
+          The game runs entirely on your device.
+        </p>
+      </details>
+
+      <details>
+        <summary>The game is crashing — what should I do?</summary>
+        <p>
+          Please follow the troubleshooting steps above. If the problem continues,
+          contact support with your device model and iOS version.
+        </p>
+      </details>
+    </div>
+
+    <div class="card">
+      <h2>App Information</h2>
+      <div class="kvs">
+        <div>App</div>
+        <div>Funny Boum</div>
+
+        <div>Platform</div>
+        <div>iOS / iPadOS</div>
+
+        <div>Developer</div>
+        <div>Sideeffect</div>
+      </div>
+    </div>
+
+    <footer>
+      © <span id="year"></span> Sideeffect. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

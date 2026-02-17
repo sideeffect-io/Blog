@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Funny Boum — Privacy Policy</title>
+  <meta name="description" content="Privacy Policy for Funny Boum." />
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --card: #12141b;
+      --text: #e8e8ea;
+      --muted: #a6a6ad;
+      --link: #7dd3fc;
+      --border: rgba(255,255,255,0.08);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7f7fb;
+        --card: #ffffff;
+        --text: #101114;
+        --muted: #4b5563;
+        --link: #0369a1;
+        --border: rgba(0,0,0,0.08);
+      }
+    }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .wrap {
+      max-width: 820px;
+      padding: 28px 18px;
+      margin: 0 auto;
+    }
+    h1 { font-size: 32px; margin-bottom: 6px; }
+    h2 { font-size: 20px; margin-top: 24px; }
+    .muted { color: var(--muted); }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      margin-top: 18px;
+    }
+    footer {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Privacy Policy</h1>
+    <p class="muted">Last updated: February 17, 2026</p>
+
+    <div class="card">
+      <p>
+        <strong>Funny Boum</strong> is designed to respect your privacy.
+        This Privacy Policy explains how information is handled when you use the app.
+      </p>
+
+      <h2>Data Collection</h2>
+      <p>
+        Funny Boum does <strong>not collect, store, transmit, or share any personal data</strong>.
+      </p>
+      <ul>
+        <li>No account creation</li>
+        <li>No analytics tracking</li>
+        <li>No advertising identifiers</li>
+        <li>No location data</li>
+        <li>No personal information of any kind</li>
+      </ul>
+
+      <h2>On-Device Data</h2>
+      <p>
+        Any game data (such as settings or progress) is stored locally on your device
+        and is never transmitted to the developer.
+      </p>
+
+      <h2>Third-Party Services</h2>
+      <p>
+        Funny Boum does not use third-party analytics, advertising SDKs,
+        or external tracking services.
+      </p>
+
+      <h2>Children’s Privacy</h2>
+      <p>
+        Because no personal data is collected, Funny Boum does not knowingly collect
+        information from children or adults.
+      </p>
+
+      <h2>Changes to This Policy</h2>
+      <p>
+        This Privacy Policy may be updated from time to time.
+        Any changes will be posted on this page with an updated revision date.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        If you have any questions about this Privacy Policy, you can contact:
+        <br /><br />
+        <strong>Email:</strong>
+        <a href="mailto:thibault@sideeffect.io">thibault@sideeffect.io</a>
+      </p>
+    </div>
+
+    <footer>
+      © <span id="year"></span> Sideeffect. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
