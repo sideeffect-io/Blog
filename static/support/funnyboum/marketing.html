@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Funny Boum — The explosive game that makes you laugh</title>
+  <meta name="description" content="Funny Boum is a fast, fun and explosive iPhone game. Easy to play, hard to put down." />
+
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --card: #12141b;
+      --text: #e8e8ea;
+      --muted: #a6a6ad;
+      --accent: #ff7a18;
+      --accent2: #ffd166;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7f7fb;
+        --card: #ffffff;
+        --text: #101114;
+        --muted: #4b5563;
+        --border: rgba(0,0,0,0.08);
+      }
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+        "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(circle at 20% 0%, #1a1c24, var(--bg));
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 20px;
+    }
+
+    /* HERO */
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 44px;
+      letter-spacing: -0.02em;
+      margin: 0 0 16px 0;
+    }
+
+    .subtitle {
+      font-size: 20px;
+      color: var(--muted);
+      max-width: 720px;
+      margin: 0 auto 28px;
+    }
+
+    .cta {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #000;
+      padding: 14px 26px;
+      border-radius: 14px;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+
+    .cta:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.02);
+    }
+
+    .cta-sub {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* FEATURES */
+
+    .features {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      margin-top: 60px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    /* SCREENSHOTS */
+
+    .screenshots {
+      margin-top: 70px;
+      text-align: center;
+    }
+
+    .screenshots-title {
+      font-size: 28px;
+      margin-bottom: 24px;
+      letter-spacing: -0.01em;
+    }
+
+    .shots-scroll {
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      padding: 10px 4px 20px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .shots-scroll::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .shots-scroll img {
+      height: 520px;
+      border-radius: 28px;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+      scroll-snap-align: center;
+      cursor: zoom-in;
+      transition: transform 0.25s ease;
+      background: #000;
+    }
+
+    .shots-scroll img:hover {
+      transform: translateY(-4px) scale(1.02);
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 60px;
+      padding-bottom: 40px;
+    }
+
+    .links a {
+      color: var(--muted);
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 34px; }
+      .subtitle { font-size: 18px; }
+      .shots-scroll img { height: 460px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <section class="hero">
+      <div class="badge">🎮 iPhone/iPad Game</div>
+
+      <h1>Funny Boum</h1>
+
+      <p class="subtitle">
+        The fast, fun and explosive game that puts your reflexes to the test.
+        Easy to pick up… hard to put down.
+      </p>
+
+      <!-- 🔴 REPLACE WITH YOUR APP STORE LINK -->
+      <a class="cta" href="#" target="_blank" rel="noopener noreferrer">
+        Download on the App Store
+      </a>
+      <div class="cta-sub">No account • No tracking • 100% on-device</div>
+    </section>
+
+    <section class="features" aria-label="Key features">
+      <div class="card">
+        <h3>⚡ Quick sessions</h3>
+        <p>
+          Jump into a game in seconds. Perfect for short breaks
+          or longer play sessions.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🎯 Simple & addictive</h3>
+        <p>
+          Easy-to-understand mechanics with a real challenge.
+          Mastering it is another story.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>💥 Instant fun</h3>
+        <p>
+          No complicated setup. Open the game, play, repeat.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>📱 100% on-device</h3>
+        <p>
+          No data collection. Your experience stays private.
+        </p>
+      </div>
+    </section>
+
+    <!-- SCREENSHOTS -->
+    <section class="screenshots" aria-label="Screenshot gallery">
+      <h2 class="screenshots-title">Game Preview</h2>
+
+      <div class="shots-scroll">
+        <!-- 🔴 REPLACE THESE FILES WITH YOUR REAL SCREENSHOTS -->
+        <img src="screenshots/Screenshot1.png" alt="Funny Boum gameplay screenshot 1" />
+        <img src="screenshots/Screenshot2.png" alt="Funny Boum gameplay screenshot 2" />
+        <img src="screenshots/Screenshot3.png" alt="Funny Boum gameplay screenshot 3" />
+        <img src="screenshots/Screenshot4.png" alt="Funny Boum gameplay screenshot 4" />
+        <img src="screenshots/Screenshot5.png" alt="Funny Boum gameplay screenshot 5" />
+        <img src="screenshots/Screenshot6.png" alt="Funny Boum gameplay screenshot 6" />
+        <img src="screenshots/Screenshot7.png" alt="Funny Boum gameplay screenshot 7" />
+        <img src="screenshots/Screenshot8.png" alt="Funny Boum gameplay screenshot 8" />
+      </div>
+    </section>
+
+    <footer>
+      <div class="links">
+        <!-- 🔴 REPLACE WITH YOUR URLS -->
+        <a href="https://sideeffect.io/support/funnyboum/support.html">Support</a>
+        ·
+        <a href="https://sideeffect.io/support/funnyboum/privacy.html">Privacy</a>
+      </div>
+
+      <p style="margin-top:10px;">
+        © <span id="year"></span> Sideeffect. All rights reserved.
+      </p>
+    </footer>
+
+  </div>
+
+  <script>
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Simple lightbox for screenshots
+    document.querySelectorAll('.shots-scroll img').forEach(img => {
+      img.addEventListener('click', () => {
+        const overlay = document.createElement('div');
+        overlay.style.position = 'fixed';
+        overlay.style.inset = '0';
+        overlay.style.background = 'rgba(0,0,0,0.9)';
+        overlay.style.display = 'flex';
+        overlay.style.alignItems = 'center';
+        overlay.style.justifyContent = 'center';
+        overlay.style.zIndex = '9999';
+        overlay.style.cursor = 'zoom-out';
+
+        const big = document.createElement('img');
+        big.src = img.src;
+        big.alt = img.alt;
+        big.style.maxWidth = '92%';
+        big.style.maxHeight = '92%';
+        big.style.borderRadius = '20px';
+        big.style.boxShadow = '0 40px 80px rgba(0,0,0,0.6)';
+
+        overlay.appendChild(big);
+        overlay.onclick = () => overlay.remove();
+        document.body.appendChild(overlay);
+      });
+    });
+  </script>
+</body>
+</html>
