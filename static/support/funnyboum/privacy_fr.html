@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Funny Boum — Politique de confidentialité</title>
+  <meta name="description" content="Politique de confidentialité de Funny Boum." />
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --card: #12141b;
+      --text: #e8e8ea;
+      --muted: #a6a6ad;
+      --link: #7dd3fc;
+      --border: rgba(255,255,255,0.08);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7f7fb;
+        --card: #ffffff;
+        --text: #101114;
+        --muted: #4b5563;
+        --link: #0369a1;
+        --border: rgba(0,0,0,0.08);
+      }
+    }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .wrap {
+      max-width: 820px;
+      padding: 28px 18px;
+      margin: 0 auto;
+    }
+    h1 { font-size: 32px; margin-bottom: 6px; }
+    h2 { font-size: 20px; margin-top: 24px; }
+    .muted { color: var(--muted); }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      margin-top: 18px;
+    }
+    footer {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Politique de confidentialité</h1>
+    <p class="muted">Dernière mise à jour : 17 février 2026</p>
+
+    <div class="card">
+      <p>
+        <strong>Funny Boum</strong> est conçu pour respecter votre vie privée.
+        Cette politique explique comment les informations sont traitées lors de l’utilisation de l’application.
+      </p>
+
+      <h2>Collecte de données</h2>
+      <p>
+        Funny Boum <strong>ne collecte, ne stocke, ne transmet ni ne partage aucune donnée personnelle</strong>.
+      </p>
+      <ul>
+        <li>Aucun compte utilisateur</li>
+        <li>Aucun suivi analytique</li>
+        <li>Aucun identifiant publicitaire</li>
+        <li>Aucune donnée de localisation</li>
+        <li>Aucune information personnelle</li>
+      </ul>
+
+      <h2>Données stockées sur l’appareil</h2>
+      <p>
+        Les éventuelles données de jeu (comme les réglages ou la progression)
+        sont stockées uniquement sur votre appareil et ne sont jamais transmises au développeur.
+      </p>
+
+      <h2>Services tiers</h2>
+      <p>
+        Funny Boum n’utilise aucun service tiers d’analytics, de publicité
+        ou de suivi externe.
+      </p>
+
+      <h2>Vie privée des enfants</h2>
+      <p>
+        Puisqu’aucune donnée personnelle n’est collectée, Funny Boum ne collecte
+        sciemment aucune information concernant les enfants ou les adultes.
+      </p>
+
+      <h2>Modifications de cette politique</h2>
+      <p>
+        Cette politique de confidentialité peut être mise à jour occasionnellement.
+        Toute modification sera publiée sur cette page avec une date de révision mise à jour.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Pour toute question concernant cette politique de confidentialité :
+        <br /><br />
+        <strong>Email :</strong>
+        <a href="mailto:thibault@sideeffect.io">thibault@sideeffect.io</a>
+      </p>
+    </div>
+
+    <footer>
+      © <span id="year"></span> Sideeffect. Tous droits réservés.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

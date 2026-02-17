@@ -15,7 +15,7 @@ Here's a list of Open Source projects I contribute to on a regular basis:
 Funny Boum reinvents the legendary puzzle with fast gameplay, special modes, and retro vibes.
 I created this as part of my hands-on learning with Codex and vibe coding.
 * GitHub: https://github.com/sideeffect-io/FunnyBoum
-* Support page: https://sideeffect.io/files/support/funnyboum/support.html
+* Support page: https://sideeffect.io/support/funnyboum/support.html
 
 # AsyncExtensions
 
