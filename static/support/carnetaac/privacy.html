@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Politique de confidentialité - Carnet AAC</title>
+  <meta name="description" content="Politique de confidentialité de Carnet AAC, application iPhone de suivi personnel des trajets de conduite accompagnée.">
+  <meta name="theme-color" content="#0f6f66">
+  <meta property="og:title" content="Politique de confidentialité - Carnet AAC">
+  <meta property="og:description" content="Données traitées, iCloud, GPS, exports et suppression des données dans Carnet AAC.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/app-icon.png">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17211f;
+      --muted: #5e6865;
+      --paper: #fbfbf8;
+      --quiet: #edf2ef;
+      --line: rgba(23, 33, 31, 0.14);
+      --teal: #0f6f66;
+      --blue: #2c5f93;
+      --amber: #b66a1c;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.58;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:focus-visible {
+      outline: 3px solid rgba(15, 111, 102, 0.38);
+      outline-offset: 4px;
+      border-radius: 10px;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 34px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+      color: var(--white);
+      background: rgba(16, 35, 33, 0.92);
+      backdrop-filter: blur(18px);
+    }
+
+    .brand-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 850;
+    }
+
+    .brand-mark img {
+      width: 38px;
+      height: 38px;
+      border-radius: 11px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255, 255, 255, 0.84);
+      font-weight: 750;
+      font-size: 0.92rem;
+    }
+
+    .nav a {
+      padding: 8px 10px;
+      border-radius: 999px;
+      transition: background 180ms ease, color 180ms ease;
+    }
+
+    .nav a:hover {
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 430px;
+      display: grid;
+      align-items: end;
+      padding: 96px 34px 64px;
+      color: var(--white);
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -4%;
+      z-index: -2;
+      background: url("assets/hero-road.png") center / cover;
+      transform: scale(1.04);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(90deg, rgba(6, 20, 19, 0.86) 0%, rgba(6, 20, 19, 0.62) 44%, rgba(6, 20, 19, 0.10) 100%),
+        linear-gradient(0deg, rgba(6, 20, 19, 0.62) 0%, rgba(6, 20, 19, 0.02) 62%);
+    }
+
+    .hero-inner,
+    .content {
+      width: min(980px, 100%);
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: #ffc24d;
+      font-size: 0.9rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin-bottom: 18px;
+      font-size: clamp(3rem, 8vw, 5rem);
+      line-height: 0.96;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .hero p:not(.eyebrow) {
+      max-width: 680px;
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 1.12rem;
+    }
+
+    main {
+      padding: 70px 34px 86px;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: minmax(0, 0.66fr) minmax(280px, 0.34fr);
+      gap: 56px;
+      align-items: start;
+    }
+
+    .policy {
+      display: grid;
+      gap: 44px;
+    }
+
+    section {
+      padding-top: 2px;
+      border-top: 1px solid var(--line);
+    }
+
+    section h2 {
+      margin: 24px 0 12px;
+      font-size: 2rem;
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    section p {
+      color: var(--muted);
+    }
+
+    ul {
+      margin: 14px 0 0;
+      padding-left: 1.2rem;
+      color: var(--muted);
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    .summary {
+      position: sticky;
+      top: 94px;
+      padding: 24px;
+      border-radius: 24px;
+      color: var(--white);
+      background: #102321;
+    }
+
+    .summary h2 {
+      margin: 0 0 12px;
+      font-size: 1.35rem;
+    }
+
+    .summary p {
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .summary-list {
+      display: grid;
+      gap: 12px;
+      margin: 18px 0 24px;
+    }
+
+    .summary-list span {
+      display: block;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.16);
+      color: rgba(255, 255, 255, 0.82);
+      font-weight: 750;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      color: var(--ink);
+      background: var(--white);
+      font-weight: 850;
+      transition: transform 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .text-link {
+      display: inline-flex;
+      width: fit-content;
+      color: var(--teal);
+      font-weight: 850;
+      border-bottom: 2px solid rgba(15, 111, 102, 0.22);
+    }
+
+    .text-link:hover {
+      border-color: var(--teal);
+    }
+
+    .footer {
+      padding: 30px 34px 42px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      background: var(--paper);
+    }
+
+    .footer-inner {
+      width: min(980px, 100%);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 26px;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.94rem;
+    }
+
+    @media (max-width: 860px) {
+      .site-header {
+        padding: 16px 22px;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .hero {
+        min-height: 430px;
+        padding: 86px 22px 48px;
+      }
+
+      main {
+        padding: 54px 22px 70px;
+      }
+
+      .content {
+        grid-template-columns: 1fr;
+        gap: 42px;
+      }
+
+      .summary {
+        position: static;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" aria-label="Navigation principale">
+    <a class="brand-mark" href="index.html" aria-label="Carnet AAC">
+      <img src="assets/app-icon.png" alt="">
+      <span>Carnet AAC</span>
+    </a>
+    <nav class="nav" aria-label="Sections de la politique">
+      <a href="#donnees">Données</a>
+      <a href="#gps">GPS</a>
+      <a href="#icloud">iCloud</a>
+      <a href="#suppression">Suppression</a>
+    </nav>
+  </header>
+
+  <section class="hero" aria-label="Politique de confidentialité">
+    <div class="hero-inner">
+      <p class="eyebrow">Version du 22 mai 2026</p>
+      <h1>Politique de confidentialité</h1>
+      <p>Carnet AAC est une application de suivi personnel des trajets de conduite accompagnée. L’app n’est pas un service officiel et ne remplace pas le livret d’apprentissage, l’auto-école, l’ANTS ou les documents à présenter lors d’un contrôle.</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="content">
+      <div class="policy">
+        <section id="donnees">
+          <h2>Données traitées</h2>
+          <p>L’application peut enregistrer sur l’appareil les données que vous saisissez ou validez dans le carnet.</p>
+          <ul>
+            <li>Trajets : date, lieu de départ, lieu d’arrivée, kilomètres, durée, mode de saisie manuel ou GPS, véhicule, notes et tags optionnels de conditions.</li>
+            <li>Véhicules : nom du véhicule, type de boîte de vitesse et véhicule par défaut.</li>
+            <li>Statistiques : totaux, progression cumulée, kilomètres par mois, cadence estimée, jalons et répartition par type de boîte, calculés à partir des trajets du carnet.</li>
+            <li>Exports : fichiers PDF ou JSON générés uniquement lorsque vous lancez l’export depuis l’app.</li>
+          </ul>
+        </section>
+
+        <section id="gps">
+          <h2>Localisation et GPS</h2>
+          <p>La localisation est demandée uniquement lorsque vous démarrez un trajet GPS. L’app affiche une estimation de distance et de durée, puis vous demande de valider ou corriger les kilomètres avant l’enregistrement.</p>
+          <p>Le suivi en arrière-plan est optionnel. Il sert uniquement à continuer l’estimation d’un trajet explicitement démarré lorsque l’iPhone est verrouillé ou que l’app quitte le premier plan. Ce choix est désactivé au premier lancement, mémorisé localement si vous l’activez, et reste modifiable avant chaque départ.</p>
+          <p>L’itinéraire complet n’est pas conservé dans le carnet. À l’arrêt d’un trajet GPS, les points de départ et d’arrivée peuvent être envoyés aux services Apple de géocodage afin de proposer un nom de ville.</p>
+        </section>
+
+        <section id="icloud">
+          <h2>iCloud et partage</h2>
+          <p>Si iCloud est activé pour l’application, les données du carnet peuvent être synchronisées par Apple CloudKit dans votre compte iCloud.</p>
+          <p>Si vous utilisez le partage iCloud, les comptes invités peuvent accéder aux données partagées selon les droits que vous accordez. Le partage est volontaire et limité aux comptes iCloud choisis.</p>
+        </section>
+
+        <section>
+          <h2>Exports, import et partage de fichiers</h2>
+          <p>L’export PDF crée un récapitulatif partageable via les APIs natives d’iOS. L’export JSON crée une sauvegarde complète des véhicules et trajets du carnet. L’import JSON valide le fichier choisi, puis remplace le carnet actif si l’import est confirmé.</p>
+          <p>Ces fichiers sont créés ou sélectionnés par l’utilisateur. Cette version ne contient pas de serveur applicatif propre à Carnet AAC, pas de publicité, pas de SDK analytics et pas de suivi publicitaire tiers.</p>
+        </section>
+
+        <section id="suppression">
+          <h2>Conservation et suppression</h2>
+          <p>Les données restent dans le carnet jusqu’à leur suppression par l’utilisateur, la suppression de l’application ou les règles applicables à son compte iCloud.</p>
+          <p>L’onglet À propos permet d’effacer les trajets et véhicules du carnet actif. Si iCloud est activé, la suppression peut être synchronisée par iCloud.</p>
+        </section>
+
+        <section>
+          <h2>Permissions et réglages</h2>
+          <p>Vous pouvez retirer la permission de localisation dans les réglages iOS. L’app propose aussi un accès aux réglages système depuis l’onglet À propos.</p>
+          <p>Pour arrêter un partage iCloud, utilisez l’écran de partage du carnet dans l’app ou les réglages iCloud applicables.</p>
+        </section>
+
+        <section>
+          <h2>Contact</h2>
+          <p>Les demandes relatives à la confidentialité peuvent être adressées via les coordonnées du développeur affichées sur la fiche App Store ou par email au support.</p>
+          <a class="text-link" href="mailto:thibault@sideeffect.io?subject=Confidentialit%C3%A9%20Carnet%20AAC">thibault@sideeffect.io</a>
+        </section>
+      </div>
+
+      <aside class="summary" aria-label="Résumé confidentialité">
+        <h2>Résumé</h2>
+        <p>Carnet AAC est conçu comme un carnet personnel, local-first, avec iCloud et le partage activés selon les réglages de l’utilisateur.</p>
+        <div class="summary-list">
+          <span>Pas de publicité</span>
+          <span>Pas de SDK analytics</span>
+          <span>Pas de tracking publicitaire</span>
+          <span>Pas de serveur applicatif Carnet AAC</span>
+          <span>GPS lancé uniquement par l’utilisateur</span>
+          <span>Suppression possible dans l’app</span>
+        </div>
+        <a class="button" href="index.html">Retour au site</a>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>© 2026 SideEffect. Carnet AAC.</span>
+      <span><a class="text-link" href="https://www.service-public.fr/particuliers/vosdroits/F2826" rel="noopener">Règles AAC sur Service-Public.fr</a></span>
+    </div>
+  </footer>
+</body>
+</html>
