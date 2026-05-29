@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Carnet AAC - Carnet de conduite accompagnée pour iPhone</title>
-  <meta name="description" content="Carnet AAC aide à suivre les trajets de conduite accompagnée, estimer les kilomètres au GPS, gérer les véhicules, suivre les statistiques, partager via iCloud et exporter le carnet.">
+  <meta name="description" content="Carnet AAC aide les familles à suivre la conduite accompagnée avec un carnet par apprenti, des véhicules familiaux, le GPS, les statistiques, le partage iCloud et les exports PDF, CSV et JSON.">
   <meta name="theme-color" content="#0f6f66">
   <meta property="og:title" content="Carnet AAC">
-  <meta property="og:description" content="Un carnet clair et privé pour suivre les trajets, véhicules, statistiques, exports et partages de conduite accompagnée.">
+  <meta property="og:description" content="Un carnet clair et privé pour suivre les trajets, les apprentis, les véhicules familiaux, les statistiques, les exports et le partage iCloud.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/hero-road.png">
   <style>
@@ -441,6 +441,69 @@
       color: var(--white);
     }
 
+    .family {
+      background: #eef3f5;
+    }
+
+    .family-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.62fr) minmax(320px, 0.38fr);
+      gap: 56px;
+      align-items: start;
+    }
+
+    .family-copy p:not(.section-kicker) {
+      max-width: 690px;
+      color: var(--muted);
+      font-size: 1.06rem;
+    }
+
+    .family-copy .text-link {
+      margin-top: 18px;
+    }
+
+    .family-steps {
+      border-top: 1px solid var(--line);
+    }
+
+    .family-step {
+      display: grid;
+      grid-template-columns: 48px minmax(0, 1fr);
+      gap: 18px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .family-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      color: var(--white);
+      background: #102321;
+      font-weight: 900;
+      font-size: 0.88rem;
+    }
+
+    .family-step strong,
+    .family-note strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1.08rem;
+    }
+
+    .family-step p,
+    .family-note p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .family-note {
+      padding-top: 24px;
+    }
+
     .privacy .section-kicker,
     .support .section-kicker {
       color: #ffc24d;
@@ -731,6 +794,7 @@
       }
 
       .section-heading,
+      .family-layout,
       .privacy-points,
       .support-grid,
       .notice-layout {
@@ -787,6 +851,15 @@
       .capability-icon {
         width: 40px;
         height: 40px;
+      }
+
+      .family-step {
+        grid-template-columns: 40px minmax(0, 1fr);
+      }
+
+      .family-number {
+        width: 38px;
+        height: 38px;
       }
 
       .privacy-visual {
@@ -868,6 +941,7 @@
     <nav class="nav" aria-label="Sections">
       <a href="#apercu">Aperçu</a>
       <a href="#fonctions">Fonctions</a>
+      <a href="#famille">Famille</a>
       <a href="#confidentialite">Confidentialité</a>
       <a href="#support">Support</a>
     </nav>
@@ -878,8 +952,8 @@
       <div class="hero-copy">
         <p class="eyebrow">Application iPhone pour la conduite accompagnée</p>
         <h1>Carnet AAC</h1>
-        <h2>Un carnet privé pour suivre les trajets, les véhicules et la progression vers les 3 000 km.</h2>
-        <p>Saisie manuelle ou GPS, tags de conditions, statistiques, partage iCloud, export PDF et sauvegarde JSON dans une app pensée pour l’élève conducteur et ses accompagnateurs.</p>
+        <h2>Un carnet privé pour suivre chaque apprenti, les trajets et la progression vers les 3 000 km.</h2>
+        <p>Saisie manuelle ou GPS, carnets par apprenti, véhicules familiaux, tags de situations, statistiques, partage familial iCloud et exports PDF, CSV et JSON.</p>
         <div class="actions" aria-label="Actions principales">
           <a class="button button-primary" href="mailto:thibault@sideeffect.io?subject=Support%20Carnet%20AAC">Contacter le support</a>
           <a class="button button-secondary" href="#apercu">Voir l’app</a>
@@ -894,7 +968,7 @@
             <p class="section-kicker">Suivi clair</p>
             <h2>Tout le carnet au même endroit.</h2>
           </div>
-          <p>Carnet AAC regroupe l’accueil, les trajets, les véhicules, les statistiques et les rappels utiles dans une interface locale-first, avec iCloud seulement si l’utilisateur l’active.</p>
+          <p>Carnet AAC regroupe l’accueil, les trajets, les apprentis, les véhicules familiaux, les statistiques et les rappels utiles dans une interface locale-first, avec iCloud seulement si l’utilisateur l’active.</p>
         </div>
 
         <div class="phone-row" aria-label="Captures d’écran de l’application">
@@ -921,25 +995,25 @@
             <p class="section-kicker">Fonctions clés</p>
             <h2>Conçu pour tenir le suivi sans friction.</h2>
           </div>
-          <p>Chaque trajet reste modifiable avant validation, avec les informations utiles pour relire le parcours, préparer un rendez-vous pédagogique ou partager le carnet.</p>
+          <p>Chaque carnet reste séparé par apprenti, avec les informations utiles pour relire les parcours, préparer un rendez-vous pédagogique ou partager le suivi avec les bons comptes iCloud.</p>
         </div>
 
         <div class="feature-list reveal" aria-label="Fonctionnalités principales">
+          <div class="feature">
+            <strong>Carnets par apprenti</strong>
+            <p>Créez un carnet séparé pour chaque élève conducteur, changez d’apprenti rapidement et gardez les trajets associés au bon prénom.</p>
+          </div>
           <div class="feature">
             <strong>Saisie manuelle ou GPS</strong>
             <p>Enregistrez départ, arrivée, durée, véhicule, kilomètres et notes, puis corrigez l’estimation GPS si nécessaire.</p>
           </div>
           <div class="feature">
-            <strong>Véhicules et conditions</strong>
-            <p>Gérez le véhicule par défaut, la boîte manuelle ou automatique, et les tags nuit, pluie, ville ou autoroute.</p>
+            <strong>Véhicules et situations</strong>
+            <p>Gérez les véhicules familiaux, le véhicule par défaut, les types électrique, thermique manuel ou thermique auto, et les tags nuit, pluie, ville ou autoroute.</p>
           </div>
           <div class="feature">
-            <strong>Progression lisible</strong>
-            <p>Suivez le total, les kilomètres par mois, la cadence actuelle et les jalons 1 000, 2 000 et 3 000 km.</p>
-          </div>
-          <div class="feature">
-            <strong>Partage et export</strong>
-            <p>Partagez via iCloud avec les comptes invités, exportez un PDF et sauvegardez ou restaurez un carnet JSON.</p>
+            <strong>Partage familial et exports</strong>
+            <p>Partagez via iCloud avec les comptes invités, exportez un PDF ou un CSV et sauvegardez ou restaurez le carnet en JSON.</p>
           </div>
         </div>
 
@@ -948,7 +1022,7 @@
             <span class="capability-icon" aria-hidden="true">01</span>
             <div>
               <strong>Accueil actionnable</strong>
-              <p>Total des kilomètres, derniers trajets, statut iCloud et raccourcis vers la saisie manuelle, le GPS, les véhicules, le partage et l’export PDF.</p>
+              <p>Total des kilomètres, derniers trajets, statut iCloud, apprenti actif et raccourcis vers la saisie manuelle, le GPS, les véhicules familiaux, le partage et l’export PDF.</p>
             </div>
           </div>
           <div class="capability">
@@ -979,22 +1053,64 @@
             <span class="capability-icon" aria-hidden="true">04</span>
             <div>
               <strong>Assistant de démarrage</strong>
-              <p>Un assistant explique les permissions GPS, le suivi en arrière-plan optionnel, la validation à l’arrivée, les tags et le partage iCloud.</p>
+              <p>Un assistant explique les apprentis de la famille, les véhicules, les permissions GPS, le suivi en arrière-plan optionnel, les tags et le partage iCloud.</p>
             </div>
           </div>
           <div class="capability">
             <span class="capability-icon" aria-hidden="true">05</span>
             <div>
               <strong>Statistiques de progression</strong>
-              <p>Graphique cumulé, barres mensuelles, cadence hebdomadaire et mensuelle, répartition par boîte de vitesse et dates estimées quand le rythme le permet.</p>
+              <p>Graphique cumulé, barres mensuelles, cadence hebdomadaire et mensuelle, répartition par type de véhicule et dates estimées quand le rythme le permet.</p>
             </div>
           </div>
           <div class="capability">
             <span class="capability-icon" aria-hidden="true">06</span>
             <div>
               <strong>Contrôle du carnet</strong>
-              <p>Export PDF pour partager un récapitulatif, export/import JSON complet, suppression des trajets et véhicules du carnet actif depuis l’onglet À propos.</p>
+              <p>Export PDF pour partager un récapitulatif, export CSV des trajets, export/import JSON complet, suppression des trajets et véhicules du carnet actif depuis l’onglet À propos.</p>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="famille" class="section family">
+      <div class="section-inner family-layout reveal">
+        <div class="family-copy">
+          <p class="section-kicker">Partage familial</p>
+          <h2>Un carnet par apprenti, partagé selon votre organisation.</h2>
+          <p>La famille peut créer plusieurs apprentis au démarrage ou plus tard dans l’app. Chaque apprenti a son carnet, ses trajets, ses notes et ses statistiques, tandis que les véhicules restent disponibles pour toute la famille.</p>
+          <p>Le partage passe par iCloud : vous invitez uniquement les comptes Apple concernés et vous gardez la main sur les accès depuis l’écran de partage.</p>
+          <a class="text-link" href="#support">Voir les questions fréquentes</a>
+        </div>
+
+        <div>
+          <div class="family-steps" aria-label="Modes de partage familial">
+            <div class="family-step">
+              <span class="family-number" aria-hidden="true">01</span>
+              <div>
+                <strong>Parents d’abord</strong>
+                <p>Les parents créent les carnets, ajoutent les véhicules familiaux, puis partagent chaque carnet avec l’apprenti concerné.</p>
+              </div>
+            </div>
+            <div class="family-step">
+              <span class="family-number" aria-hidden="true">02</span>
+              <div>
+                <strong>Apprenti d’abord</strong>
+                <p>L’apprenti crée son carnet sur son iPhone et le partage avec ses accompagnateurs. Les parents peuvent retrouver les carnets reçus dans leur app.</p>
+              </div>
+            </div>
+            <div class="family-step">
+              <span class="family-number" aria-hidden="true">03</span>
+              <div>
+                <strong>Sans partage</strong>
+                <p>Le carnet peut rester personnel, avec la même saisie, les mêmes statistiques et les mêmes exports.</p>
+              </div>
+            </div>
+          </div>
+          <div class="family-note">
+            <strong>Accès limités</strong>
+            <p>Le partage public est désactivé. Seuls les comptes iCloud explicitement invités peuvent accéder au carnet partagé.</p>
           </div>
         </div>
       </div>
@@ -1021,11 +1137,11 @@
             </div>
             <div class="privacy-item">
               <strong>iCloud volontaire</strong>
-              <p>La synchronisation et le partage passent par Apple iCloud lorsque le service est activé sur l’appareil, avec invitation des comptes choisis.</p>
+              <p>La synchronisation et le partage familial passent par Apple iCloud lorsque le service est activé sur l’appareil, avec invitation des comptes choisis et partage public désactivé.</p>
             </div>
             <div class="privacy-item">
               <strong>Données contrôlables</strong>
-              <p>L’écran À propos permet d’exporter, importer ou effacer les trajets et véhicules du carnet actif.</p>
+              <p>L’écran À propos permet d’exporter les trajets en CSV, de sauvegarder ou restaurer le carnet familial en JSON, et d’effacer les données existantes.</p>
             </div>
             <a class="text-link" href="privacy.html">Lire la politique de confidentialité</a>
           </div>
@@ -1040,11 +1156,15 @@
             <p class="section-kicker">Support</p>
             <h2>Une question, un bug ou une demande ?</h2>
           </div>
-          <p>Le support répond aux problèmes liés à l’application, au suivi GPS, à iCloud, à l’export PDF et à la suppression des données.</p>
+          <p>Le support répond aux problèmes liés à l’application, au suivi GPS, à iCloud, aux exports PDF, CSV et JSON, et à la suppression des données.</p>
         </div>
 
         <div class="support-grid">
           <div class="faq reveal" aria-label="Questions fréquentes">
+            <details>
+              <summary>Comment fonctionne le partage familial ?</summary>
+              <p>Chaque apprenti possède son carnet. Une famille peut créer plusieurs carnets sur un même iPhone, partager un carnet via iCloud avec les comptes invités, ou garder un carnet sans partage.</p>
+            </details>
             <details>
               <summary>Que faut-il joindre à une demande de support ?</summary>
               <p>Indiquez le modèle d’iPhone, la version d’iOS, la version de Carnet AAC, l’état iCloud si le partage est concerné, puis les étapes permettant de reproduire le problème.</p>
@@ -1055,19 +1175,19 @@
             </details>
             <details>
               <summary>Que signifie le suivi GPS en arrière-plan ?</summary>
-              <p>Il permet de continuer l’estimation d’un trajet explicitement démarré lorsque l’iPhone est verrouillé ou que l’app quitte le premier plan. Il est désactivé au premier lancement, mémorisé seulement si l’utilisateur l’active, et s’arrête avec le trajet.</p>
+              <p>Il permet de continuer l’estimation d’un trajet explicitement démarré lorsque l’iPhone est verrouillé ou que l’app quitte le premier plan. Il est activé au premier lancement, reste désactivable avant chaque départ, et s’arrête avec le trajet.</p>
             </details>
             <details>
               <summary>Comment sauvegarder ou restaurer tout le carnet ?</summary>
-              <p>L’onglet À propos permet d’exporter un fichier JSON complet des véhicules et trajets, puis d’importer un fichier Carnet AAC valide. L’import remplace le carnet actif.</p>
+              <p>L’onglet À propos permet d’exporter un fichier JSON complet des apprentis, véhicules et trajets, puis d’importer un fichier Carnet AAC valide. L’import remplace les données existantes.</p>
             </details>
             <details>
               <summary>Comment arrêter un partage iCloud ?</summary>
-              <p>Ouvrez l’écran de partage du carnet dans l’app pour gérer les personnes invitées. Les réglages iCloud de l’appareil restent également applicables.</p>
+              <p>Ouvrez l’écran de partage du carnet dans l’app pour gérer les comptes invités ou arrêter le partage. Les réglages iCloud de l’appareil restent également applicables.</p>
             </details>
             <details>
               <summary>Comment supprimer les données du carnet ?</summary>
-              <p>Dans l’app, ouvrez l’onglet À propos, puis utilisez l’action d’effacement des données du carnet actif. Si iCloud est activé, la suppression peut être synchronisée par iCloud.</p>
+              <p>Dans l’app, ouvrez l’onglet À propos, puis utilisez l’action d’effacement des données. Si iCloud est activé, la suppression peut être synchronisée par iCloud.</p>
             </details>
           </div>
 
@@ -1078,7 +1198,7 @@
             <div class="support-meta">
               <span>Langue du support : français</span>
               <span>Application : Carnet AAC pour iPhone</span>
-              <span>Dernière mise à jour de cette page : 22 mai 2026</span>
+              <span>Dernière mise à jour de cette page : 29 mai 2026</span>
             </div>
           </aside>
         </div>

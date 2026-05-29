@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Politique de confidentialité - Carnet AAC</title>
-  <meta name="description" content="Politique de confidentialité de Carnet AAC, application iPhone de suivi personnel des trajets de conduite accompagnée.">
+  <meta name="description" content="Politique de confidentialité de Carnet AAC, application iPhone de suivi familial des trajets de conduite accompagnée.">
   <meta name="theme-color" content="#0f6f66">
   <meta property="og:title" content="Politique de confidentialité - Carnet AAC">
-  <meta property="og:description" content="Données traitées, iCloud, GPS, exports et suppression des données dans Carnet AAC.">
+  <meta property="og:description" content="Données traitées, apprentis, véhicules familiaux, iCloud, GPS, exports et suppression des données dans Carnet AAC.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/app-icon.png">
   <style>
@@ -333,9 +333,9 @@
 
   <section class="hero" aria-label="Politique de confidentialité">
     <div class="hero-inner">
-      <p class="eyebrow">Version du 22 mai 2026</p>
+      <p class="eyebrow">Version du 29 mai 2026</p>
       <h1>Politique de confidentialité</h1>
-      <p>Carnet AAC est une application de suivi personnel des trajets de conduite accompagnée. L’app n’est pas un service officiel et ne remplace pas le livret d’apprentissage, l’auto-école, l’ANTS ou les documents à présenter lors d’un contrôle.</p>
+      <p>Carnet AAC est une application de suivi familial des trajets de conduite accompagnée, avec un carnet par apprenti lorsque la famille en a besoin. L’app n’est pas un service officiel et ne remplace pas le livret d’apprentissage, l’auto-école, l’ANTS ou les documents à présenter lors d’un contrôle.</p>
     </div>
   </section>
 
@@ -346,42 +346,43 @@
           <h2>Données traitées</h2>
           <p>L’application peut enregistrer sur l’appareil les données que vous saisissez ou validez dans le carnet.</p>
           <ul>
+            <li>Apprentis et carnets : prénom de l’apprenti, carnet actif et titre du carnet.</li>
             <li>Trajets : date, lieu de départ, lieu d’arrivée, kilomètres, durée, mode de saisie manuel ou GPS, véhicule, notes et tags optionnels de conditions.</li>
-            <li>Véhicules : nom du véhicule, type de boîte de vitesse et véhicule par défaut.</li>
-            <li>Statistiques : totaux, progression cumulée, kilomètres par mois, cadence estimée, jalons et répartition par type de boîte, calculés à partir des trajets du carnet.</li>
-            <li>Exports : fichiers PDF ou JSON générés uniquement lorsque vous lancez l’export depuis l’app.</li>
+            <li>Véhicules familiaux : nom du véhicule, type électrique, thermique manuel ou thermique automatique, et véhicule par défaut.</li>
+            <li>Statistiques : totaux, progression cumulée, kilomètres par mois, cadence estimée, jalons et répartition par type de véhicule, calculés à partir des trajets du carnet.</li>
+            <li>Exports : fichiers PDF, CSV ou JSON générés uniquement lorsque vous lancez l’export depuis l’app.</li>
           </ul>
         </section>
 
         <section id="gps">
           <h2>Localisation et GPS</h2>
           <p>La localisation est demandée uniquement lorsque vous démarrez un trajet GPS. L’app affiche une estimation de distance et de durée, puis vous demande de valider ou corriger les kilomètres avant l’enregistrement.</p>
-          <p>Le suivi en arrière-plan est optionnel. Il sert uniquement à continuer l’estimation d’un trajet explicitement démarré lorsque l’iPhone est verrouillé ou que l’app quitte le premier plan. Ce choix est désactivé au premier lancement, mémorisé localement si vous l’activez, et reste modifiable avant chaque départ.</p>
+          <p>Le suivi en arrière-plan est optionnel. Il sert uniquement à continuer l’estimation d’un trajet explicitement démarré lorsque l’iPhone est verrouillé ou que l’app quitte le premier plan. Ce choix est activé au premier lancement pour le cas courant d’un iPhone verrouillé pendant le trajet, mémorisé localement, et reste modifiable avant chaque départ.</p>
           <p>L’itinéraire complet n’est pas conservé dans le carnet. À l’arrêt d’un trajet GPS, les points de départ et d’arrivée peuvent être envoyés aux services Apple de géocodage afin de proposer un nom de ville.</p>
         </section>
 
         <section id="icloud">
           <h2>iCloud et partage</h2>
           <p>Si iCloud est activé pour l’application, les données du carnet peuvent être synchronisées par Apple CloudKit dans votre compte iCloud.</p>
-          <p>Si vous utilisez le partage iCloud, les comptes invités peuvent accéder aux données partagées selon les droits que vous accordez. Le partage est volontaire et limité aux comptes iCloud choisis.</p>
+          <p>Si vous utilisez le partage familial iCloud, les comptes invités peuvent accéder au carnet partagé selon les droits que vous accordez. Le partage est volontaire, limité aux comptes iCloud choisis, et le partage public est désactivé dans l’app.</p>
         </section>
 
         <section>
           <h2>Exports, import et partage de fichiers</h2>
-          <p>L’export PDF crée un récapitulatif partageable via les APIs natives d’iOS. L’export JSON crée une sauvegarde complète des véhicules et trajets du carnet. L’import JSON valide le fichier choisi, puis remplace le carnet actif si l’import est confirmé.</p>
+          <p>L’export PDF crée un récapitulatif partageable via les APIs natives d’iOS. L’export CSV crée un fichier des trajets. L’export JSON crée une sauvegarde complète des apprentis, véhicules et trajets du carnet. L’import JSON valide le fichier choisi, puis remplace les données existantes si l’import est confirmé.</p>
           <p>Ces fichiers sont créés ou sélectionnés par l’utilisateur. Cette version ne contient pas de serveur applicatif propre à Carnet AAC, pas de publicité, pas de SDK analytics et pas de suivi publicitaire tiers.</p>
         </section>
 
         <section id="suppression">
           <h2>Conservation et suppression</h2>
           <p>Les données restent dans le carnet jusqu’à leur suppression par l’utilisateur, la suppression de l’application ou les règles applicables à son compte iCloud.</p>
-          <p>L’onglet À propos permet d’effacer les trajets et véhicules du carnet actif. Si iCloud est activé, la suppression peut être synchronisée par iCloud.</p>
+          <p>L’onglet À propos permet d’effacer les trajets et véhicules du carnet actif. La gestion des apprentis permet aussi de supprimer un carnet d’apprenti. Si iCloud est activé, la suppression peut être synchronisée par iCloud.</p>
         </section>
 
         <section>
           <h2>Permissions et réglages</h2>
           <p>Vous pouvez retirer la permission de localisation dans les réglages iOS. L’app propose aussi un accès aux réglages système depuis l’onglet À propos.</p>
-          <p>Pour arrêter un partage iCloud, utilisez l’écran de partage du carnet dans l’app ou les réglages iCloud applicables.</p>
+          <p>Pour arrêter un partage iCloud, utilisez l’écran de partage du carnet dans l’app ou les réglages iCloud applicables. Les comptes invités peuvent aussi être retirés depuis l’écran de partage.</p>
         </section>
 
         <section>
@@ -393,13 +394,14 @@
 
       <aside class="summary" aria-label="Résumé confidentialité">
         <h2>Résumé</h2>
-        <p>Carnet AAC est conçu comme un carnet personnel, local-first, avec iCloud et le partage activés selon les réglages de l’utilisateur.</p>
+        <p>Carnet AAC est conçu comme un carnet familial local-first, avec iCloud et le partage activés selon les réglages de l’utilisateur.</p>
         <div class="summary-list">
           <span>Pas de publicité</span>
           <span>Pas de SDK analytics</span>
           <span>Pas de tracking publicitaire</span>
           <span>Pas de serveur applicatif Carnet AAC</span>
           <span>GPS lancé uniquement par l’utilisateur</span>
+          <span>Partage public désactivé</span>
           <span>Suppression possible dans l’app</span>
         </div>
         <a class="button" href="index.html">Retour au site</a>
