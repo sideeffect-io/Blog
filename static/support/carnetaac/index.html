@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Carnet AAC - Carnet de conduite accompagnée pour iPhone</title>
-  <meta name="description" content="Carnet AAC aide les familles à suivre la conduite accompagnée avec un carnet par apprenti, des trajets par mois, le GPS sur iPhone et CarPlay, les activités en direct, les véhicules familiaux, les statistiques, le partage iCloud et les exports PDF, CSV et JSON.">
+  <meta name="description" content="Carnet AAC aide les familles à suivre la conduite accompagnée avec un carnet par apprenti, des trajets par mois, le GPS sur iPhone et CarPlay, les activités en direct, les véhicules familiaux, les statistiques, le partage iCloud, les exports PDF, CSV et JSON, et des analytics anonymisés.">
   <meta name="theme-color" content="#0f6f66">
   <meta property="og:title" content="Carnet AAC">
-  <meta property="og:description" content="Un carnet clair et privé pour suivre les trajets par mois, les apprentis, les véhicules familiaux, le GPS sur iPhone et CarPlay, les statistiques, les exports et le partage iCloud.">
+  <meta property="og:description" content="Un carnet clair et privé pour suivre les trajets par mois, les apprentis, les véhicules familiaux, le GPS sur iPhone et CarPlay, les statistiques, les exports, le partage iCloud et des analytics anonymisés.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/hero-road.png">
   <style>
@@ -345,7 +345,7 @@
     }
 
     .release-list {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
     }
 
     .feature {
@@ -1016,7 +1016,7 @@
             <p class="section-kicker">Version 2.0</p>
             <h2>CarPlay, trajets par mois et suivi plus visible.</h2>
           </div>
-          <p>La version 2.0 ajoute le démarrage depuis CarPlay, rend le suivi GPS visible sans rouvrir l'app et réorganise le carnet autour des trajets mensuels.</p>
+        <p>La version 2.0 ajoute le démarrage depuis CarPlay, rend le suivi GPS visible sans rouvrir l'app, réorganise le carnet autour des trajets mensuels et introduit des mesures d'usage anonymisées.</p>
         </div>
 
         <div class="feature-list release-list reveal" aria-label="Nouveautés de Carnet AAC 2.0">
@@ -1031,6 +1031,10 @@
           <div class="feature">
             <strong>Carnet mensuel</strong>
             <p>Les trajets sont regroupés par mois avec un compteur, tandis que l'accueil, les statistiques, les exports et l'écran À propos gagnent en lisibilité.</p>
+          </div>
+          <div class="feature">
+            <strong>Analytics anonymisés</strong>
+            <p>Les mesures TelemetryDeck aident à suivre l'usage global sans envoyer les lieux, véhicules, notes, tags ou identifiants de trajet.</p>
           </div>
         </div>
       </div>
@@ -1185,7 +1189,7 @@
             <p class="section-kicker">Confidentialité</p>
             <h2>Le suivi reste centré sur votre carnet.</h2>
           </div>
-          <p>La page reprend les engagements utiles pour l’App Store : pas de publicité, pas de SDK analytics, pas de suivi publicitaire et pas de serveur applicatif propre à Carnet AAC.</p>
+          <p>La page reprend les engagements utiles pour l’App Store : pas de publicité, analytics TelemetryDeck limité, pas de suivi publicitaire et pas de serveur applicatif propre à Carnet AAC.</p>
         </div>
 
         <div class="privacy-points">
@@ -1200,6 +1204,10 @@
             <div class="privacy-item">
               <strong>iCloud volontaire</strong>
               <p>La synchronisation et le partage familial passent par Apple iCloud lorsque le service est activé sur l’appareil, avec invitation des comptes choisis et partage public désactivé.</p>
+            </div>
+            <div class="privacy-item">
+              <strong>Analytics limités</strong>
+              <p>TelemetryDeck reçoit les signaux techniques du SDK et un événement par nouveau trajet, limité aux kilomètres arrondis, au mode manuel ou GPS et à l'origine app, Siri, widget ou CarPlay.</p>
             </div>
             <div class="privacy-item">
               <strong>Données contrôlables</strong>
