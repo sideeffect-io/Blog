@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ViaPad - Carnet de conduite accompagnée pour iPhone</title>
-  <meta name="description" content="ViaPad aide les familles à suivre la conduite accompagnée avec des carnets par apprenti, des objectifs en kilomètres ou en heures, la saisie manuelle assistée, le GPS sur iPhone et CarPlay, le widget, les statistiques, le partage iCloud et les exports.">
+  <title>ViaPad - Carnet AAC pour iPhone, CarPlay et iCloud</title>
+  <meta name="description" content="ViaPad aide les familles à suivre la conduite accompagnée avec carnets par apprenti, trajets fréquents, saisie manuelle assistée, GPS, CarPlay, Live Activities, widget, statistiques, partage iCloud et exports PDF, CSV ou JSON.">
   <meta name="theme-color" content="#0f6f66">
   <meta property="og:title" content="ViaPad">
-  <meta property="og:description" content="Un carnet clair et privé pour suivre les apprentis, les objectifs, les trajets, le widget, les statistiques, les exports et le partage iCloud.">
+  <meta property="og:description" content="Un carnet clair, gratuit et privé pour suivre les apprentis, les objectifs, les trajets, le GPS, CarPlay, le widget, les statistiques, les exports et le partage iCloud.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/app-icon.png">
   <link rel="alternate" hreflang="fr" href="index.html">
@@ -153,24 +153,23 @@
 
     .hero {
       position: relative;
-      min-height: clamp(640px, 88svh, 880px);
+      min-height: clamp(620px, 78svh, 700px);
       overflow: hidden;
       display: grid;
-      align-items: end;
-      padding: 118px 34px 54px;
+      align-items: center;
+      padding: 102px 34px 40px;
       color: var(--white);
+      background: #102321;
       isolation: isolate;
     }
 
     .hero::before {
       content: "";
       position: absolute;
-      inset: -4%;
+      inset: 0 0 0 52%;
       z-index: -2;
-      background-image: url("assets/hero-road.png");
-      background-size: cover;
-      background-position: center;
-      transform: translateY(calc(var(--scroll, 0) * 16px)) scale(1.04);
+      background: #edf5f1;
+      transform: translateY(calc(var(--scroll, 0) * 16px));
       transition: transform 120ms linear;
     }
 
@@ -180,12 +179,21 @@
       inset: 0;
       z-index: -1;
       background:
-        linear-gradient(90deg, rgba(6, 20, 19, 0.82) 0%, rgba(6, 20, 19, 0.64) 38%, rgba(6, 20, 19, 0.12) 72%),
-        linear-gradient(0deg, rgba(6, 20, 19, 0.66) 0%, rgba(6, 20, 19, 0.02) 45%);
+        linear-gradient(105deg, rgba(8, 22, 20, 0.94) 0%, rgba(12, 40, 36, 0.94) 46%, rgba(237, 245, 241, 0.18) 46%, rgba(237, 245, 241, 0.02) 100%),
+        linear-gradient(0deg, rgba(8, 22, 20, 0.36) 0%, rgba(8, 22, 20, 0) 48%);
+    }
+
+    .hero-content {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 0.88fr) minmax(340px, 0.72fr);
+      gap: min(7vw, 78px);
+      align-items: center;
     }
 
     .hero-copy {
-      width: min(640px, 100%);
+      width: min(620px, 100%);
       max-width: calc(100vw - 68px);
       opacity: 0;
       transform: translateY(18px);
@@ -193,16 +201,73 @@
     }
 
     .hero-app-icon {
-      width: 86px;
-      height: 86px;
-      margin-bottom: 20px;
-      border-radius: 24px;
+      width: 72px;
+      height: 72px;
+      margin-bottom: 16px;
+      border-radius: 20px;
       box-shadow: 0 18px 46px rgba(0, 0, 0, 0.34);
     }
 
     .ready .hero-copy {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 560px;
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      align-items: center;
+    }
+
+    .hero-phone {
+      grid-row: 1;
+      margin: 0;
+      border-radius: 34px;
+      overflow: hidden;
+      aspect-ratio: 1242 / 2688;
+      background: #e8eeec;
+      box-shadow: 0 28px 76px rgba(0, 0, 0, 0.28);
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 760ms ease, transform 760ms ease;
+    }
+
+    .ready .hero-phone {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero-phone img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-phone-primary {
+      grid-column: 2 / 6;
+      width: min(260px, 100%);
+      justify-self: center;
+      z-index: 3;
+    }
+
+    .hero-phone-secondary {
+      grid-column: 1 / 4;
+      width: min(190px, 82%);
+      justify-self: start;
+      margin-top: 132px;
+      z-index: 2;
+      transition-delay: 90ms;
+    }
+
+    .hero-phone-tertiary {
+      grid-column: 4 / 7;
+      width: min(190px, 82%);
+      justify-self: end;
+      margin-bottom: 132px;
+      z-index: 1;
+      transition-delay: 170ms;
     }
 
     .eyebrow {
@@ -231,8 +296,8 @@
     }
 
     h1 {
-      margin-bottom: 16px;
-      font-size: 5.2rem;
+      margin-bottom: 14px;
+      font-size: 4.7rem;
       line-height: 0.95;
       font-weight: 900;
       letter-spacing: 0;
@@ -240,8 +305,8 @@
 
     .hero h2 {
       max-width: 580px;
-      margin-bottom: 18px;
-      font-size: 2rem;
+      margin-bottom: 16px;
+      font-size: 1.72rem;
       line-height: 1.12;
       font-weight: 800;
       letter-spacing: 0;
@@ -249,9 +314,9 @@
 
     .hero p {
       max-width: 540px;
-      margin-bottom: 30px;
+      margin-bottom: 24px;
       color: rgba(255, 255, 255, 0.84);
-      font-size: 1.12rem;
+      font-size: 1.04rem;
     }
 
     .actions {
@@ -360,17 +425,17 @@
       transform: translateY(0);
     }
 
-    .phone:nth-child(2) {
+    .phone:nth-child(4n + 2) {
       margin-top: 42px;
       transition-delay: 70ms;
     }
 
-    .phone:nth-child(3) {
+    .phone:nth-child(4n + 3) {
       margin-top: 12px;
       transition-delay: 140ms;
     }
 
-    .phone:nth-child(4) {
+    .phone:nth-child(4n + 4) {
       margin-top: 56px;
       transition-delay: 210ms;
     }
@@ -820,18 +885,27 @@
       }
 
       .hero {
-        min-height: clamp(660px, 84svh, 720px);
-        padding: 104px 22px 40px;
+        min-height: auto;
+        padding: 104px 22px 46px;
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 28px;
       }
 
       .hero-copy {
         max-width: calc(100vw - 44px);
       }
 
+      .hero::before {
+        inset: 58% 0 0;
+      }
+
       .hero::after {
         background:
-          linear-gradient(90deg, rgba(6, 20, 19, 0.84) 0%, rgba(6, 20, 19, 0.52) 55%, rgba(6, 20, 19, 0.08) 100%),
-          linear-gradient(0deg, rgba(6, 20, 19, 0.68) 0%, rgba(6, 20, 19, 0.02) 58%);
+          linear-gradient(180deg, rgba(8, 22, 20, 0.96) 0%, rgba(13, 45, 40, 0.94) 60%, rgba(237, 245, 241, 0.08) 60%, rgba(237, 245, 241, 0) 100%),
+          linear-gradient(0deg, rgba(8, 22, 20, 0.18) 0%, rgba(8, 22, 20, 0) 42%);
       }
 
       h1 {
@@ -853,6 +927,28 @@
 
       .hero p {
         font-size: 1rem;
+      }
+
+      .hero-visual {
+        min-height: 240px;
+        max-width: 440px;
+      }
+
+      .hero-phone-primary {
+        width: min(190px, 46vw);
+      }
+
+      .hero-phone-secondary,
+      .hero-phone-tertiary {
+        width: min(150px, 36vw);
+      }
+
+      .hero-phone-secondary {
+        margin-top: 104px;
+      }
+
+      .hero-phone-tertiary {
+        margin-bottom: 104px;
       }
 
       .section {
@@ -973,6 +1069,28 @@
         border-radius: 20px;
       }
 
+      .hero::before {
+        display: none;
+      }
+
+      .hero::after {
+        background: linear-gradient(180deg, rgba(8, 22, 20, 0.98) 0%, rgba(13, 45, 40, 0.98) 100%);
+      }
+
+      .hero-visual {
+        display: none;
+        min-height: 210px;
+      }
+
+      .hero-phone-primary {
+        width: min(162px, 48vw);
+      }
+
+      .hero-phone-secondary,
+      .hero-phone-tertiary {
+        width: min(128px, 36vw);
+      }
+
       .actions {
         display: grid;
       }
@@ -1004,7 +1122,7 @@
       }
 
       .hero::before {
-        transform: scale(1.04);
+        transform: none;
       }
     }
   </style>
@@ -1031,15 +1149,29 @@
 
   <main id="top">
     <section class="hero" aria-label="Présentation de ViaPad">
-      <div class="hero-copy">
-        <img class="hero-app-icon" src="assets/app-icon.png" alt="">
-        <p class="eyebrow">Carnet iPhone pour la conduite accompagnée</p>
-        <h1>ViaPad</h1>
-        <h2>Un carnet privé pour suivre les objectifs, les trajets et la progression de chaque apprenti.</h2>
-        <p>Saisie manuelle assistée, GPS sur iPhone ou CarPlay, véhicules familiaux, widget, statistiques, partage iCloud et exports PDF, CSV ou JSON.</p>
-        <div class="actions" aria-label="Actions principales">
-          <a class="button button-primary" href="mailto:thibault@sideeffect.io?subject=Support%20ViaPad">Contacter le support</a>
-          <a class="button button-secondary" href="#apercu">Voir l’app</a>
+      <div class="hero-content">
+        <div class="hero-copy">
+          <img class="hero-app-icon" src="assets/app-icon.png" alt="">
+          <p class="eyebrow">Carnet iPhone pour la conduite accompagnée</p>
+          <h1>ViaPad</h1>
+          <h2>Suivez chaque kilomètre, du premier trajet aux objectifs de chaque apprenti.</h2>
+          <p>Trajets fréquents, saisie manuelle assistée, GPS sur iPhone, Siri ou CarPlay, Live Activities, widget, statistiques, partage iCloud et exports PDF, CSV ou JSON.</p>
+          <div class="actions" aria-label="Actions principales">
+            <a class="button button-primary" href="mailto:thibault@sideeffect.io?subject=Support%20ViaPad">Contacter le support</a>
+            <a class="button button-secondary" href="#apercu">Voir l’app</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Captures d’écran de ViaPad">
+          <figure class="hero-phone hero-phone-secondary">
+            <img src="assets/screenshot-fr-trips.png" alt="Trajets ViaPad organisés par mois." loading="eager">
+          </figure>
+          <figure class="hero-phone hero-phone-primary">
+            <img src="assets/screenshot-fr-progress.png" alt="Accueil ViaPad avec progression et raccourcis." loading="eager">
+          </figure>
+          <figure class="hero-phone hero-phone-tertiary">
+            <img src="assets/screenshot-fr-carplay.png" alt="Suivi GPS ViaPad sur CarPlay." loading="eager">
+          </figure>
         </div>
       </div>
     </section>
@@ -1049,23 +1181,35 @@
         <div class="section-heading reveal">
           <div>
             <p class="section-kicker">Aperçu actuel</p>
-            <h2>Le suivi quotidien, sans dispersion.</h2>
+            <h2>Le suivi quotidien, aligné avec l’App Store.</h2>
           </div>
-          <p>ViaPad rassemble la progression, les actions rapides, les trajets, les véhicules, les statistiques et les exports dans une interface locale-first, avec iCloud uniquement si vous l’activez.</p>
+          <p>Les captures actuelles montrent le flux complet : progression, trajets, statistiques, saisie manuelle, choix GPS ou manuel, confidentialité, CarPlay et activité en direct.</p>
         </div>
 
         <div class="phone-row" aria-label="Captures d’écran de l’application">
           <figure class="phone reveal">
-            <img src="assets/screenshot-accueil.png" alt="Accueil de ViaPad avec progression et actions rapides.">
+            <img src="assets/screenshot-fr-progress.png" alt="Accueil de ViaPad avec progression, actions rapides et objectif kilométrique." loading="lazy">
           </figure>
           <figure class="phone reveal">
-            <img src="assets/screenshot-trajets.png" alt="Liste des trajets regroupés par mois dans ViaPad.">
+            <img src="assets/screenshot-fr-trips.png" alt="Liste des trajets ViaPad organisée par mois avec modes et conditions." loading="lazy">
           </figure>
           <figure class="phone reveal">
-            <img src="assets/screenshot-stats.png" alt="Statistiques de progression et jalons kilométriques.">
+            <img src="assets/screenshot-fr-stats.png" alt="Statistiques ViaPad avec objectif, historique mensuel et meilleur mois." loading="lazy">
           </figure>
           <figure class="phone reveal">
-            <img src="assets/screenshot-confidentialite.png" alt="Écran À propos avec objectifs, confidentialité et exports.">
+            <img src="assets/screenshot-fr-manual.png" alt="Saisie manuelle ViaPad avec distance, durée, véhicule et conditions." loading="lazy">
+          </figure>
+          <figure class="phone reveal">
+            <img src="assets/screenshot-fr-gps.png" alt="Écran GPS ViaPad avec suivi en direct, arrière-plan et arrêt automatique." loading="lazy">
+          </figure>
+          <figure class="phone reveal">
+            <img src="assets/screenshot-fr-about.png" alt="Écran À propos ViaPad indiquant gratuité, absence de publicité, confidentialité et exports." loading="lazy">
+          </figure>
+          <figure class="phone reveal">
+            <img src="assets/screenshot-fr-carplay.png" alt="Suivi d’un trajet ViaPad sur CarPlay." loading="lazy">
+          </figure>
+          <figure class="phone reveal">
+            <img src="assets/screenshot-fr-live-activity.png" alt="Activité en direct ViaPad sur écran verrouillé avec distance, durée et bouton d’arrêt." loading="lazy">
           </figure>
         </div>
       </div>
@@ -1076,27 +1220,27 @@
         <div class="section-heading reveal">
           <div>
             <p class="section-kicker">Version actuelle</p>
-            <h2>ViaPad, objectifs personnalisables et captures à jour.</h2>
+            <h2>Version 2.6 : trajets fréquents, saisie plus rapide et GPS plus robuste.</h2>
           </div>
-        <p>La version 2.3 pose la nouvelle identité ViaPad, met à jour les captures et aligne l’accueil, les statistiques, le widget et les exports sur l’objectif choisi.</p>
+          <p>La version actuelle consolide les flux qui comptent au quotidien : réutiliser un trajet, renseigner distance et durée, récupérer un GPS interrompu et démarrer depuis l’app, Siri, le widget ou CarPlay.</p>
         </div>
 
-        <div class="feature-list release-list reveal" aria-label="Nouveautés de ViaPad 2.3">
+        <div class="feature-list release-list reveal" aria-label="Nouveautés de ViaPad 2.6">
           <div class="feature">
-            <strong>Nouvelle identité</strong>
-            <p>L’app devient ViaPad, avec une présentation plus claire du carnet et des captures actuelles.</p>
+            <strong>Trajets fréquents</strong>
+            <p>Enregistrez un trajet manuel comme modèle, puis réutilisez son parcours, sa distance, sa durée, son véhicule et ses conditions.</p>
           </div>
           <div class="feature">
-            <strong>Objectifs au choix</strong>
-            <p>Suivez les jalons de conduite accompagnée en France ou créez vos propres objectifs en kilomètres ou en heures.</p>
+            <strong>Saisie plus rapide</strong>
+            <p>L’estimation d’itinéraire peut renseigner la durée en plus de la distance, sans écraser une durée modifiée à la main.</p>
           </div>
           <div class="feature">
-            <strong>Saisie plus aidée</strong>
-            <p>Les villes déjà utilisées sont proposées plus facilement et la distance routière peut être estimée après choix du départ et de l’arrivée.</p>
+            <strong>GPS récupérable</strong>
+            <p>Un trajet GPS interrompu reste disponible comme brouillon local, à vérifier, enregistrer ou ignorer explicitement.</p>
           </div>
           <div class="feature">
-            <strong>Progression cohérente</strong>
-            <p>L’objectif actif suit le carnet dans les stats, le widget, les exports, les sauvegardes JSON et le partage iCloud.</p>
+            <strong>Partout où vous démarrez</strong>
+            <p>L’app, Siri, le widget et CarPlay partagent le même flux de démarrage, de suivi et de consolidation du carnet.</p>
           </div>
         </div>
       </div>
@@ -1107,27 +1251,27 @@
         <div class="section-heading reveal">
           <div>
             <p class="section-kicker">Fonctions clés</p>
-            <h2>Les fonctions utiles, visibles dès le quotidien.</h2>
+            <h2>Tout le carnet de conduite, sans multiplier les outils.</h2>
           </div>
-          <p>ViaPad couvre les besoins publics du carnet: enregistrer les trajets, suivre l’objectif, consulter la progression, partager si nécessaire et exporter les données.</p>
+          <p>ViaPad couvre la saisie, le suivi GPS, les véhicules, les conditions travaillées, les objectifs, les statistiques, le partage familial et les exports.</p>
         </div>
 
         <div class="feature-list reveal" aria-label="Fonctionnalités principales">
           <div class="feature">
-            <strong>Carnets par apprenti</strong>
-            <p>Créez un carnet séparé pour chaque élève conducteur, changez d’apprenti rapidement et gardez les trajets associés au bon prénom.</p>
+            <strong>Carnets et véhicules familiaux</strong>
+            <p>Créez un carnet par apprenti, partagez les véhicules de la famille et conservez chaque trajet au bon endroit.</p>
           </div>
           <div class="feature">
-            <strong>Objectifs personnalisables</strong>
-            <p>Suivez les 3 000 km de conduite accompagnée ou configurez vos propres jalons en kilomètres ou en heures.</p>
+            <strong>Manuel ou fréquent</strong>
+            <p>Saisissez un trajet en quelques secondes, estimez distance et durée, dupliquez un parcours ou réutilisez un modèle.</p>
           </div>
           <div class="feature">
-            <strong>Manuel, GPS ou CarPlay</strong>
-            <p>Ajoutez un trajet à la main avec assistance sur les villes, ou lancez un suivi GPS depuis l’iPhone ou CarPlay.</p>
+            <strong>GPS, Siri, widget et CarPlay</strong>
+            <p>Démarrez un suivi GPS depuis l’iPhone, Siri, le widget ou l’écran de la voiture, puis vérifiez avant sauvegarde.</p>
           </div>
           <div class="feature">
-            <strong>Partage familial et exports</strong>
-            <p>Partagez via iCloud avec les comptes invités, exportez un PDF ou un CSV et sauvegardez ou restaurez le carnet en JSON.</p>
+            <strong>Stats, partage et exports</strong>
+            <p>Suivez objectifs, rythme et conditions, partagez via iCloud et exportez en PDF, CSV ou JSON.</p>
           </div>
         </div>
 
@@ -1142,19 +1286,33 @@
           <div class="capability">
             <span class="capability-icon" aria-hidden="true">02</span>
             <div>
-              <strong>Trajets rapides à compléter</strong>
-              <p>Suggestions de villes, estimation de distance routière quand départ et arrivée sont connus, trajet retour, modification et suppression.</p>
+              <strong>Saisie manuelle assistée</strong>
+              <p>Date, départ, arrivée, kilomètres, durée, véhicule, notes et conditions, avec suggestions de lieux et estimation routière.</p>
             </div>
           </div>
           <div class="capability">
             <span class="capability-icon" aria-hidden="true">03</span>
             <div>
-              <strong>GPS maîtrisé</strong>
-              <p>Le suivi démarre sur action utilisateur, affiche distance et durée, fonctionne aussi depuis CarPlay et peut apparaître sur l’écran verrouillé quand iOS le permet.</p>
+              <strong>Trajets fréquents</strong>
+              <p>Transformez un trajet manuel en modèle pour réutiliser rapidement le parcours, la durée, le véhicule et les conditions.</p>
             </div>
           </div>
           <div class="capability">
             <span class="capability-icon" aria-hidden="true">04</span>
+            <div>
+              <strong>GPS maîtrisé</strong>
+              <p>Le suivi démarre sur action utilisateur, affiche distance, durée et qualité du signal, puis laisse valider ou corriger avant l’enregistrement.</p>
+            </div>
+          </div>
+          <div class="capability">
+            <span class="capability-icon" aria-hidden="true">05</span>
+            <div>
+              <strong>CarPlay, Siri et Live Activities</strong>
+              <p>Démarrez depuis Siri ou CarPlay, suivez le trajet sur l’écran verrouillé ou la Dynamic Island, puis arrêtez sans rouvrir l’app.</p>
+            </div>
+          </div>
+          <div class="capability">
+            <span class="capability-icon" aria-hidden="true">06</span>
             <div>
               <strong>Véhicules et situations</strong>
               <p>Les véhicules familiaux restent disponibles pour chaque carnet, avec des tags pour repérer les conditions travaillées.</p>
@@ -1162,6 +1320,8 @@
                 <span>Nuit</span>
                 <span>Pluie</span>
                 <span>Autoroute</span>
+                <span>Péages</span>
+                <span>Ponts</span>
                 <span>Ville</span>
                 <span>Campagne</span>
                 <span>Manœuvres</span>
@@ -1171,17 +1331,17 @@
             </div>
           </div>
           <div class="capability">
-            <span class="capability-icon" aria-hidden="true">05</span>
+            <span class="capability-icon" aria-hidden="true">07</span>
             <div>
               <strong>Stats et widget</strong>
-              <p>La progression, le rythme du mois, les jalons et le dernier trajet restent visibles dans l’app et sur le widget iOS.</p>
+              <p>La progression, le rythme mensuel, les jalons, les conditions, les boîtes de vitesse et le dernier trajet restent visibles dans l’app et sur le widget iOS.</p>
             </div>
           </div>
           <div class="capability">
-            <span class="capability-icon" aria-hidden="true">06</span>
+            <span class="capability-icon" aria-hidden="true">08</span>
             <div>
-              <strong>Exports et contrôle</strong>
-              <p>PDF pour partager un récapitulatif, CSV pour les trajets, JSON pour sauvegarder ou restaurer, et suppression depuis l’onglet À propos.</p>
+              <strong>iCloud, sauvegardes et exports</strong>
+              <p>Partage iCloud invité, PDF pour le récapitulatif, CSV pour les trajets, JSON pour sauvegarder ou restaurer, et suppression depuis l’onglet À propos.</p>
             </div>
           </div>
         </div>
@@ -1193,7 +1353,7 @@
         <div class="family-copy">
           <p class="section-kicker">Partage familial</p>
           <h2>Un carnet par apprenti, partagé selon votre organisation.</h2>
-          <p>La famille peut créer plusieurs apprentis au démarrage ou plus tard dans l’app. Chaque apprenti a son carnet, ses trajets, ses notes, ses statistiques et son suivi d'objectif, tandis que les véhicules restent disponibles pour toute la famille.</p>
+          <p>La famille peut créer plusieurs apprentis au démarrage ou plus tard dans l’app. Chaque apprenti a son carnet, ses trajets, ses trajets fréquents, ses notes, ses statistiques et son suivi d’objectif, tandis que les véhicules restent disponibles pour toute la famille.</p>
           <p>Le partage passe par iCloud : vous invitez uniquement les comptes Apple concernés et vous gardez la main sur les accès depuis l’écran de partage.</p>
           <a class="text-link" href="#support">Voir les questions fréquentes</a>
         </div>
@@ -1218,7 +1378,7 @@
               <span class="family-number" aria-hidden="true">03</span>
               <div>
                 <strong>Sans partage</strong>
-                <p>Le carnet peut rester personnel, avec la même saisie, les mêmes statistiques et les mêmes exports.</p>
+                <p>Le carnet peut rester personnel, avec la même saisie, le même suivi GPS, les mêmes statistiques et les mêmes exports.</p>
               </div>
             </div>
           </div>
@@ -1235,14 +1395,14 @@
         <div class="section-heading reveal">
           <div>
             <p class="section-kicker">Confidentialité</p>
-            <h2>Le suivi reste centré sur votre carnet.</h2>
+            <h2>Gratuit, sans publicité et centré sur votre carnet.</h2>
           </div>
-          <p>Le GPS démarre à votre demande, iCloud reste optionnel, l’itinéraire complet n’est pas conservé et ViaPad n’utilise pas de suivi publicitaire.</p>
+          <p>Le GPS démarre à votre demande, iCloud reste optionnel, l’itinéraire complet n’est pas conservé et ViaPad n’utilise pas de publicité ni de suivi publicitaire.</p>
         </div>
 
         <div class="privacy-points">
           <div class="privacy-visual reveal">
-            <img src="assets/screenshot-confidentialite.png" alt="Écran À propos de ViaPad avec objectifs, confidentialité et exports.">
+            <img src="assets/screenshot-fr-about.png" alt="Écran À propos de ViaPad avec gratuité, confidentialité et exports." loading="lazy">
           </div>
           <div class="privacy-list reveal">
             <div class="privacy-item">
@@ -1271,10 +1431,10 @@
       <div class="section-inner">
         <div class="section-heading reveal">
           <div>
-            <p class="section-kicker">Support</p>
-            <h2>Une question, un bug ou une demande ?</h2>
+          <p class="section-kicker">Support</p>
+          <h2>Une question, un bug ou une demande ?</h2>
           </div>
-          <p>Le support couvre l’app, les objectifs, les trajets, le GPS, CarPlay, le widget, iCloud, les exports et la suppression des données.</p>
+          <p>Le support couvre l’app, les objectifs, les trajets fréquents, le GPS, Siri, CarPlay, les Live Activities, le widget, iCloud, les exports et la suppression des données.</p>
         </div>
 
         <div class="support-grid">
@@ -1292,8 +1452,16 @@
               <p>Non. Le GPS fournit une estimation que vous pouvez valider ou corriger avant l’enregistrement.</p>
             </details>
             <details>
+              <summary>À quoi servent les trajets fréquents ?</summary>
+              <p>Ils permettent de sauvegarder un trajet manuel comme modèle, puis de réutiliser son parcours, sa distance, sa durée, son véhicule et ses conditions.</p>
+            </details>
+            <details>
               <summary>Que permet CarPlay ?</summary>
               <p>CarPlay permet de choisir l’apprenti et le véhicule, démarrer un trajet GPS, suivre distance et durée, puis arrêter et enregistrer.</p>
+            </details>
+            <details>
+              <summary>Que se passe-t-il si un trajet GPS est interrompu ?</summary>
+              <p>ViaPad peut conserver un brouillon local afin de vous laisser vérifier le trajet, l’enregistrer ou l’ignorer explicitement.</p>
             </details>
             <details>
               <summary>Comment sauvegarder ou restaurer tout le carnet ?</summary>
@@ -1316,7 +1484,7 @@
             <div class="support-meta">
               <span>Langue du support : français</span>
               <span>Application : ViaPad pour iPhone</span>
-              <span>Dernière mise à jour de cette page : 17 juin 2026</span>
+              <span>Dernière mise à jour de cette page : 3 juillet 2026</span>
             </div>
           </aside>
         </div>
