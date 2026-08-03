@@ -1,0 +1,8 @@
+---
+const { compact = false } = Astro.props;
+---
+
+<a class:list={['brand', { compact }]} href="/" aria-label="Side Effect home">
+  <span class="brand-mark" aria-hidden="true">S<span class="brand-accent">·</span>E</span>
+  <span class="brand-name">Side Effect</span>
+</a>

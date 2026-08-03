@@ -1,0 +1,21 @@
+---
+import Logo from './Logo.astro';
+const currentPath = Astro.url.pathname;
+const links = [
+  { href: '/posts/', label: 'Journal' },
+  { href: '/me/', label: 'About' },
+  { href: '/projects/', label: 'Projects' },
+];
+---
+
+<header class="site-header">
+  <div class="header-inner">
+    <Logo />
+    <nav aria-label="Primary navigation">
+      {links.map((link) => (
+        <a class:list={{ active: currentPath.startsWith(link.href) }} href={link.href}>{link.label}</a>
+      ))}
+      <a class="header-contact" href="mailto:thibault@sideeffect.io">Contact <span aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
+</header>

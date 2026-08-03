@@ -1,7 +1,6 @@
 [build]
-  publish = "public"
-  command = "hugo"
+  publish = "dist"
+  command = "npm run build"
 
 [build.environment]
-  # set this to the Hugo version you use locally, e.g. "0.125.0"
-  HUGO_VERSION = "0.125.0"
+  NODE_VERSION = "20"

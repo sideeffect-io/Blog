@@ -1,0 +1,18 @@
+---
+import Logo from './Logo.astro';
+---
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <Logo compact />
+      <p class="footer-note">Software architecture for mobile teams that want to move with confidence.</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/sideeffect-io" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+      <a href="/rss.xml">RSS <span aria-hidden="true">↗</span></a>
+      <a href="mailto:thibault@sideeffect.io">Email <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© {new Date().getFullYear()} Side Effect</span><span>Normandy, France</span></div>
+</footer>

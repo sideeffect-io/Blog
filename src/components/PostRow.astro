@@ -1,0 +1,15 @@
+---
+import type { Post } from '../lib/content';
+import { formatDate, postSlug, tagsFor } from '../lib/content';
+const { post, featured = false } = Astro.props as { post: Post; featured?: boolean };
+const tags = tagsFor(post);
+---
+
+<article class:list={['post-row', { featured }]}>
+  <div class="post-row-meta"><time datetime={post.data.date?.toISOString()}>{formatDate(post.data.date)}</time><span>{tags[0] ?? 'Architecture'}</span></div>
+  <div class="post-row-content">
+    <h3><a href={`/posts/${postSlug(post)}/`}>{post.data.title}</a></h3>
+    {post.data.description && <p>{post.data.description}</p>}
+  </div>
+  <a class="arrow-link" href={`/posts/${postSlug(post)}/`} aria-label={`Read ${post.data.title}`}>↗</a>
+</article>

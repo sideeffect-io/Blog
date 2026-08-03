@@ -1,0 +1,12 @@
+---
+import { getEntry, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+const page = await getEntry('pages', 'me');
+if (!page) throw new Error('Missing me page');
+const { Content } = await render(page);
+---
+
+<BaseLayout title="About — Side Effect" description="About Thibault Wittemberg and the Side Effect software architecture practice.">
+  <section class="page-intro about-intro"><p class="section-kicker">About the practice</p><h1>A calm place for<br /><em>hard problems.</em></h1><p class="page-lede">Software architecture, mentorship, and open source from Normandy, France.</p></section>
+  <div class="content-page"><div class="content-page-art"><img src="/images/cotentin.jpeg" alt="The Cotentin coast in Normandy" /></div><div class="prose"><Content /></div></div>
+</BaseLayout>

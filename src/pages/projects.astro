@@ -1,0 +1,12 @@
+---
+import { getEntry, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+const page = await getEntry('pages', 'projects');
+if (!page) throw new Error('Missing projects page');
+const { Content } = await render(page);
+---
+
+<BaseLayout title="Projects — Side Effect" description="Open source projects and frameworks from Side Effect.">
+  <section class="page-intro"><p class="section-kicker">Open source</p><h1>Tools for<br /><em>the journey.</em></h1><p class="page-lede">A selection of frameworks and experiments made to help teams build software with more clarity.</p></section>
+  <div class="content-page projects-page"><div class="projects-stamp">SE<br /><span>OSS</span></div><div class="prose"><Content /></div></div>
+</BaseLayout>
