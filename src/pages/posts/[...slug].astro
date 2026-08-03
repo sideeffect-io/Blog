@@ -1,7 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { formatDate, imagePath, postSlug, postsByDate, tagsFor } from '../../lib/content';
+import { excerpt, formatDate, imagePath, postSlug, postsByDate, readingMinutes, tagsFor } from '../../lib/content';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
@@ -15,11 +15,12 @@ const index = allPosts.findIndex((item) => item.id === post.id);
 const previous = allPosts[index + 1];
 const next = allPosts[index - 1];
 const tags = tagsFor(post);
+const minutes = readingMinutes(post);
 ---
 
-<BaseLayout title={`${post.data.title} — Side Effect`} description={post.data.description}>
+<BaseLayout title={`${post.data.title} — Side Effect`} description={excerpt(post.data.description, 160)}>
   <article class="article-page">
-    <header class="article-header"><div class="article-meta"><time datetime={post.data.date?.toISOString()}>{formatDate(post.data.date)}</time><span>{tags.join(' · ')}</span></div><h1>{post.data.title}</h1>{post.data.description && <p class="article-dek">{post.data.description}</p>}</header>
+    <header class="article-header"><a class="article-back" href="/posts/">← All articles</a><div class="article-meta"><time datetime={post.data.date?.toISOString()}>{formatDate(post.data.date)}</time><span>{tags.join(' · ')}</span><span>{minutes} min read</span></div><h1>{post.data.title}</h1>{post.data.description && <p class="article-dek">{excerpt(post.data.description, 300)}</p>}</header>
     {imagePath(post.data.image) && <figure class="article-hero"><img src={imagePath(post.data.image)} alt="" /></figure>}
     <div class="article-layout"><aside class="article-aside"><a href="/posts/">← All articles</a><span>Share the idea</span><a href={`mailto:?subject=${encodeURIComponent(post.data.title)}&body=${encodeURIComponent(Astro.url.href)}`}>Email ↗</a></aside><div class="prose"><Content /></div></div>
     <nav class="article-nav" aria-label="Article navigation">{previous ? <a href={`/posts/${postSlug(previous)}/`}><span>Previous</span><strong>← {previous.data.title}</strong></a> : <span></span>}{next ? <a class="next" href={`/posts/${postSlug(next)}/`}><span>Next</span><strong>{next.data.title} →</strong></a> : <span></span>}</nav>

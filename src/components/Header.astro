@@ -11,7 +11,11 @@ const links = [
 <header class="site-header">
   <div class="header-inner">
     <Logo />
-    <nav aria-label="Primary navigation">
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">
+      <span class="menu-label">Menu</span>
+      <span class="menu-icon" aria-hidden="true"><i></i><i></i></span>
+    </button>
+    <nav class="site-nav" id="site-navigation" aria-label="Primary navigation">
       {links.map((link) => (
         <a class:list={{ active: currentPath.startsWith(link.href) }} href={link.href}>{link.label}</a>
       ))}
@@ -19,3 +23,24 @@ const links = [
     </nav>
   </div>
 </header>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+  const navigation = document.querySelector<HTMLElement>('.site-nav');
+
+  const closeMenu = () => {
+    toggle?.setAttribute('aria-expanded', 'false');
+    navigation?.removeAttribute('data-open');
+  };
+
+  toggle?.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') !== 'true';
+    toggle.setAttribute('aria-expanded', String(open));
+    navigation?.toggleAttribute('data-open', open);
+  });
+
+  navigation?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeMenu();
+  });
+</script>

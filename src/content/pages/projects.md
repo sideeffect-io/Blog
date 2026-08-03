@@ -7,42 +7,46 @@ menu:
     weight: 4
 ---
 
-Here's a list of Open Source projects I contribute to on a regular basis:
+These are the open-source projects I build or contribute to regularly. They are where I test architectural ideas in public—and where those ideas meet other developers’ needs.
 
-# Funny Boum
+## Funny Boum
 
-* Summary: Classic Minesweeper game… with a twisted sense of humor.
-Funny Boum reinvents the legendary puzzle with fast gameplay, special modes, and retro vibes.
-I created this as part of my hands-on learning with Codex and vibe coding.
-* GitHub: https://github.com/sideeffect-io/FunnyBoum
-* Support page: https://sideeffect.io/support/funnyboum/support.html
+A classic Minesweeper game with a slightly twisted sense of humor, fast rounds, special modes, and retro energy. I built it as a hands-on experiment in working with Codex and AI-assisted development.
 
-# AsyncExtensions
+[GitHub ↗](https://github.com/sideeffect-io/FunnyBoum) · [Support ↗](/support/funnyboum/support.html)
 
-* Summary: `AsyncExtensions` aims to mimic Swift Combine operators for async sequences.
-* GitHub: https://github.com/sideeffect-io/AsyncExtensions
+## AsyncExtensions
 
-# AsyncStateMachine
+Combine-inspired operators for Swift asynchronous sequences, designed to make familiar transformations available in a concurrency-native form.
 
-* Summary: `AsyncStateMachine` aims to provide a way to structure an application thanks to state machines. The goal is to identify the states and the side effects involved in each feature and to model them in a consistent and scalable way.
-* GitHub: https://github.com/sideeffect-io/AsyncStateMachine
+[GitHub ↗](https://github.com/sideeffect-io/AsyncExtensions)
 
-# Swift Async Algorithms
+## AsyncStateMachine
 
-* Summary: `swift-async-algorithms` is an Apple repo that aims to bring operators to `AsyncSequence` that are not included in the standard library.
-* GitHub: https://github.com/apple/swift-async-algorithms
+A way to structure application features around explicit states, events, and side effects. The goal is to make complex behavior consistent, testable, and scalable.
 
-# Feedbacks
+[GitHub ↗](https://github.com/sideeffect-io/AsyncStateMachine)
 
-* Summary: `Feedbacks` is a tool to build feedback loops within a Swift based application. Feedbacks relies on DSL written state machines and Apple's Combine. It is compatible with SwiftUI and UIKit.
-* GitHub: https://github.com/CombineCommunity/Feedbacks
+## Swift Async Algorithms
 
-# Spin
+I contribute to Apple’s package of algorithms for `AsyncSequence`, which extends Swift concurrency with operators that do not belong in the standard library.
 
-* Summary: `Spin` is a tool to build feedback loops within a Swift based application allowing you to use a unified syntax whatever the underlying reactive programming framework and whatever Apple UI technology you use (RxSwift, ReactiveSwift, Combine and UIKit, AppKit, SwiftUI).
-* GitHub: https://github.com/Spinners/Spin.Swift
+[GitHub ↗](https://github.com/apple/swift-async-algorithms)
 
-# RxFlow
+## Feedbacks
 
-* Summary: `RxFlow` is a navigation framework for iOS applications based on a Reactive Flow Coordinator pattern.
-* GitHub: https://github.com/RxSwiftCommunity/RxFlow
+A DSL for building feedback loops and state machines with Apple’s Combine framework, compatible with both SwiftUI and UIKit.
+
+[GitHub ↗](https://github.com/CombineCommunity/Feedbacks)
+
+## Spin
+
+A unified way to build feedback loops across RxSwift, ReactiveSwift, and Combine—and across UIKit, AppKit, and SwiftUI.
+
+[GitHub ↗](https://github.com/Spinners/Spin.Swift)
+
+## RxFlow
+
+A navigation framework for iOS based on the reactive Flow Coordinator pattern.
+
+[GitHub ↗](https://github.com/RxSwiftCommunity/RxFlow)

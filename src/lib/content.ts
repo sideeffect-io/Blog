@@ -31,3 +31,19 @@ export function formatDate(date?: Date) {
   if (!date) return '';
   return new Intl.DateTimeFormat('en-US', { dateStyle: 'long' }).format(date);
 }
+
+export function excerpt(text?: string, maximumLength = 220) {
+  if (!text) return '';
+  const normalized = text.replace(/\s+/g, ' ').trim();
+  if (normalized.length <= maximumLength) return normalized;
+
+  const shortened = normalized.slice(0, maximumLength + 1);
+  const lastSpace = shortened.lastIndexOf(' ');
+  return `${shortened.slice(0, lastSpace > maximumLength * 0.7 ? lastSpace : maximumLength).trim()}…`;
+}
+
+export function readingMinutes(post: Post) {
+  const body = 'body' in post && typeof post.body === 'string' ? post.body : '';
+  const wordCount = body.trim().split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.ceil(wordCount / 220));
+}

@@ -7,6 +7,20 @@ const { Content } = await render(page);
 ---
 
 <BaseLayout title="About — Side Effect" description="About Thibault Wittemberg and the Side Effect software architecture practice.">
-  <section class="page-intro about-intro"><p class="section-kicker">About the practice</p><h1>A calm place for<br /><em>hard problems.</em></h1><p class="page-lede">Software architecture, mentorship, and open source from Normandy, France.</p></section>
-  <div class="content-page"><div class="content-page-art"><img src="/images/cotentin.jpeg" alt="The Cotentin coast in Normandy" /></div><div class="prose"><Content /></div></div>
+  <section class="page-intro about-intro"><p class="section-kicker">About me</p><h1>Software, people,<br /><em>and the sea.</em></h1><p class="page-lede">I’m Thibault: a mobile architect, mentor, open-source contributor, and unapologetic tinkerer based in Normandy.</p></section>
+  <div class="about-layout" data-reveal>
+    <aside class="profile-card">
+      <figure>
+        <img src="/images/cotentin.jpeg" alt="The Cotentin coast in Normandy" />
+        <figcaption>Home, on the Cotentin coast.</figcaption>
+      </figure>
+      <nav class="about-nav" aria-label="On this page">
+        <span>On this page</span>
+        <a href="#about">About <b>01</b></a>
+        <a href="#resume">Resume <b>02</b></a>
+        <a href="#talks">Talks <b>03</b></a>
+      </nav>
+    </aside>
+    <div class="prose about-prose"><Content /></div>
+  </div>
 </BaseLayout>

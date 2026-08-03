@@ -11,8 +11,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <meta name="theme-color" content="#f4f3ef" />
     <link rel="canonical" href={canonical} />
     <link rel="icon" href="/favicon.ico" />
     <meta property="og:title" content={title} />
@@ -21,11 +22,30 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={new URL('/images/brand/side-effect-dark.jpg', Astro.site)} />
     <title>{title}</title>
+    <script is:inline>document.documentElement.classList.add('js');</script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
     <Header />
     <main id="main-content"><slot /></main>
     <Footer />
+    <script>
+      const revealTargets = document.querySelectorAll<HTMLElement>('[data-reveal]');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (reduceMotion || !('IntersectionObserver' in window)) {
+        revealTargets.forEach((target) => target.setAttribute('data-visible', ''));
+      } else {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            (entry.target as HTMLElement).setAttribute('data-visible', '');
+            observer.unobserve(entry.target);
+          });
+        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+
+        revealTargets.forEach((target) => observer.observe(target));
+      }
+    </script>
   </body>
 </html>

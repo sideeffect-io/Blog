@@ -7,6 +7,6 @@ const posts = postsByDate(await getCollection('posts'));
 ---
 
 <BaseLayout title="Blog — Side Effect" description="Notes on software architecture, Swift, functional programming, and mobile development.">
-  <section class="page-intro"><p class="section-kicker">The blog</p><h1>Ideas in<br /><em>motion.</em></h1><p class="page-lede">Long-form notes on software architecture, functional programming, and the craft of building mobile products.</p></section>
-  <section class="archive section-rule"><div class="archive-heading"><span>{posts.length} articles</span><span>2017 — now</span></div><div class="post-list">{posts.map((post) => <PostRow post={post} />)}</div></section>
+  <section class="page-intro"><p class="section-kicker">The blog</p><h1>Ideas worth<br /><em>writing down.</em></h1><p class="page-lede">Notes from the workbench: software architecture, functional programming, Swift, and the craft of building mobile products.</p></section>
+  <section class="archive section-rule" data-reveal><div class="archive-heading"><span>{posts.length} articles</span><span>2017 — now</span></div><div class="post-list">{posts.map((post) => <PostRow post={post} />)}</div></section>
 </BaseLayout>
