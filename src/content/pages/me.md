@@ -29,6 +29,62 @@ Algorithms](https://github.com/apple/swift-async-algorithms).
 
 I also like to fly drones and ride bikes along the beach here in Normandy, France.
 
+## Resume
+
+I’m a software architect and mobile engineer with 25 years of experience in software design, including nearly 15 years focused on native mobile development. My work has moved from Java and web technologies to Swift, Kotlin, functional programming, and state-machine-based architecture.
+
+[LinkedIn profile](https://www.linkedin.com/in/twittemb/)
+
+### What I bring
+
+* **Mobile architecture:** designing native iOS and Android applications, shared architectural principles, and pragmatic migration paths.
+* **Functional programming:** using immutability, composition, typed state, and explicit effects to make software safer and easier to test.
+* **Technical leadership:** recruiting, mentoring, and supporting teams through architecture decisions, code reviews, and continuous improvement.
+* **Delivery:** shaping Git and CI/CD practices, testing strategies, monitoring, and the everyday habits that keep teams aligned.
+* **Open source:** creating and contributing to Swift libraries around navigation, reactive programming, asynchronous sequences, and state machines.
+
+### Selected experience
+
+**Since September 2024 — Founder, [Carbone Stellaire](https://www.carbonestellaire.fr/)**
+
+Alongside software, I run a small craft practice focused on forging and knife-making. It is another way of working with materials, constraints, patience, and continuous improvement.
+
+**September 2022 – September 2024 — Freelance mobile architect, TouchTunes**
+
+Designed mobile applications and the infrastructure around them: CI/CD, monitoring, Git strategy, testing, and iOS/Android architecture. I worked in Swift and Kotlin, helped recruit and mentor a team of 15 mobile developers, and introduced functional programming and state-machine ideas into daily development.
+
+**June 2018 – June 2022 — Team lead and mobile architect, Genetec**
+
+Created the mobile department and helped grow it to eight developers. I led the team, established its ways of working, and developed native applications and shared architecture in Swift, with a focus on unidirectional data flow and state machines.
+
+**January 2018 – May 2018 — Senior iOS developer, Nuglif**
+
+Worked on the LaPresse+ iPad application in Swift, including the migration from Objective-C and technical mentoring around reactive programming.
+
+**June 2016 – January 2018 — Mobile architect and developer, Savoir Faire Linux**
+
+Designed and developed mobile products for Walter Surface Technologies, Serti, Betclic, General Electric, and the open-source Jami project. The work covered offline-first React Native, native iOS and Android, Swift, Kotlin, Java, reactive architectures, and team leadership.
+
+**2001 – 2016 — Software engineering, architecture, and technical leadership**
+
+At Sogeti High Tech, LuxMédia, IntuiTouch, CHPC, Euriware, and Cril Technologie, I worked on Android, iOS, Java, J2EE, infrastructure, industrial applications, hospital information systems, connected devices, and enterprise software. These roles gave me the foundation I now bring to mobile architecture: understanding the product, the users, and the system as a whole.
+
+### Technical focus
+
+**Architecture:** SOLID, Clean Architecture, functional and protocol-oriented programming, unidirectional data flow, MVC, MVP, MVVM-C, state machines, and developer-facing API design.
+
+**Mobile:** Swift, SwiftUI, UIKit, Objective-C, Kotlin, Java, Android Studio, Xcode, Combine, RxSwift, Kotlin Flow, Swift Concurrency, and Kotlin coroutines.
+
+**Delivery:** Git, GitHub, Gerrit, GitHub Actions, Azure DevOps, Bitrise, Firebase, TestFlight, App Store, and Google Play.
+
+### Education and languages
+
+* **2018:** Genetec leadership program at HEC Montréal.
+* **2015:** Master 2 in Software Engineering, University of Rouen — highest honors.
+* **2001:** Master’s degree in Mathematical and Computer Science.
+* **French:** native or bilingual proficiency.
+* **English:** full professional proficiency.
+
 ## Talks
 
 ### **[Cocoaheads](https://cocoaheadsmtl.com) Montreal, October 2017**
