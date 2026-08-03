@@ -51,7 +51,7 @@ Alongside software, I run a small craft practice focused on forging and knife-ma
 
 **September 2022 – September 2024 — Freelance mobile architect, TouchTunes**
 
-Designed mobile applications and the infrastructure around them: CI/CD, monitoring, Git strategy, testing, and iOS/Android architecture. I worked in Swift and Kotlin, helped recruit and mentor a team of 15 mobile developers, and introduced functional programming and state-machine ideas into daily development.
+Designed mobile applications and the infrastructure around them: CI/CD, monitoring, Git strategy, testing, and iOS/Android architecture. I worked in Swift and Kotlin, helped hire a team of 15 mobile developers, and mentored them as they grew. I introduced functional programming and state-machine ideas into daily development and reported directly to TouchTunes’ Vice President of Architecture.
 
 **June 2018 – June 2022 — Team lead and mobile architect, Genetec**
 
