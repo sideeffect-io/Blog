@@ -1,8 +1,9 @@
 ---
-const { compact = false } = Astro.props;
+const { compact = false, dark = false } = Astro.props;
+const image = dark ? '/images/brand/side-effect-dark.jpg' : '/images/brand/side-effect-light.jpg';
 ---
 
 <a class:list={['brand', { compact }]} href="/" aria-label="Side Effect home">
-  <span class="brand-mark" aria-hidden="true">S<span class="brand-accent">·</span>E</span>
+  <span class="brand-logo" aria-hidden="true"><img src={image} alt="" /></span>
   <span class="brand-name">Side Effect</span>
 </a>

@@ -12,10 +12,10 @@ const latest = posts.slice(0, 4);
   <section class="hero home-hero">
     <div class="hero-grid">
       <div class="hero-copy reveal">
-        <p class="eyebrow"><span class="eyebrow-dot"></span> Independent software architecture</p>
-        <h1>Make complexity<br /><em>work for you.</em></h1>
-        <p class="hero-lede">I help mobile teams design systems that stay understandable, testable, and ready for their next chapter.</p>
-        <div class="hero-actions"><a class="button button-dark" href="/me/">About the practice <span>↗</span></a><a class="text-link" href="/posts/">Read the journal <span>↓</span></a></div>
+        <p class="eyebrow"><span class="eyebrow-dot"></span> A personal notebook on software</p>
+        <h1>I like the<br /><em>hard parts.</em></h1>
+        <p class="hero-lede">I'm Thibault, a freelance mobile architect. I write about the systems I build, the mistakes I learn from, and the ideas that make software easier to live with.</p>
+        <div class="hero-actions"><a class="button button-dark" href="/me/">A little about me <span>↗</span></a><a class="text-link" href="/posts/">Read the journal <span>↓</span></a></div>
       </div>
       <div class="hero-art reveal reveal-delay" aria-label="Side Effect logo">
         <img src="/images/brand/side-effect-dark.jpg" alt="Side Effect logo" />
@@ -25,14 +25,19 @@ const latest = posts.slice(0, 4);
   </section>
 
   <section class="home-intro section-rule">
-    <p class="section-kicker">01 / The practice</p>
-    <div class="intro-grid"><h2>Architecture is a way of making better decisions, earlier.</h2><p>Side Effect is the practice of Thibault Wittemberg, a software architect working at the intersection of mobile product development, functional programming, and pragmatic delivery.</p></div>
+    <p class="section-kicker">01 / A little context</p>
+    <div class="intro-grid"><h2>This is where I keep the ideas that survive the work.</h2><p>After more than two decades in software—and a long love affair with Swift—I work with teams on mobile architecture, functional programming, and the small choices that make a codebase last.</p></div>
+  </section>
+
+  <section class="why-name section-rule">
+    <p class="section-kicker">02 / The name</p>
+    <div class="intro-grid"><h2>Why “Side Effect”?</h2><p>In functional programming, a side effect is where a program touches the world: a network call, a file, a user, a decision. I chose the name because that boundary is where software becomes real—and where careful design matters most.</p></div>
   </section>
 
   <section class="latest section-rule">
-    <div class="section-heading"><div><p class="section-kicker">02 / From the journal</p><h2>Notes on building software.</h2></div><a class="text-link" href="/posts/">View all articles <span>↗</span></a></div>
+    <div class="section-heading"><div><p class="section-kicker">03 / From the journal</p><h2>Notes on building software.</h2></div><a class="text-link" href="/posts/">View all articles <span>↗</span></a></div>
     <div class="post-list">{latest.map((post, index) => <PostRow post={post} featured={index === 0} />)}</div>
   </section>
 
-  <section class="home-cta section-rule"><p class="section-kicker">03 / Open source & collaboration</p><div class="cta-grid"><h2>Good systems leave room for good work.</h2><div><p>Explore the projects, frameworks, and ideas that shape the practice.</p><a class="button button-purple" href="/projects/">Explore projects <span>↗</span></a></div></div></section>
+  <section class="home-cta section-rule"><p class="section-kicker">04 / Open source & side projects</p><div class="cta-grid"><h2>A few things I've built along the way.</h2><div><p>Explore the projects and frameworks that have shaped how I think.</p><a class="button button-purple" href="/projects/">Explore projects <span>↗</span></a></div></div></section>
 </BaseLayout>
