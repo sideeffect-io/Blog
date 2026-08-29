@@ -1,5 +1,4 @@
 .DS_Store
-.hugo_build.lock
 /dist
 /.astro
 /node_modules
