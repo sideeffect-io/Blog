@@ -1,0 +1,60 @@
+<script>
+  const mermaidBlocks = document.querySelectorAll<HTMLElement>(
+    'pre[data-language="mermaid"] > code, pre > code.language-mermaid',
+  );
+
+  if (mermaidBlocks.length > 0) {
+    void (async () => {
+      try {
+        const { default: mermaid } = await import('mermaid');
+
+        mermaid.initialize({
+          startOnLoad: false,
+          securityLevel: 'strict',
+          theme: 'neutral',
+          fontFamily: 'Manrope, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+          flowchart: {
+            htmlLabels: true,
+            useMaxWidth: true,
+          },
+        });
+
+        for (const [index, code] of Array.from(mermaidBlocks).entries()) {
+          const sourceBlock = code.parentElement;
+          if (!sourceBlock) continue;
+
+          try {
+            const source = code.textContent ?? '';
+            const { svg, bindFunctions } = await mermaid.render(`sideeffect-mermaid-${index}`, source);
+            const figure = document.createElement('figure');
+            const label = document.documentElement.lang === 'fr'
+              ? 'Diagramme du cycle de développement'
+              : 'Development cycle diagram';
+
+            figure.className = 'mermaid-diagram';
+            figure.innerHTML = svg;
+
+            const renderedDiagram = figure.querySelector('svg');
+            renderedDiagram?.setAttribute('role', 'img');
+            renderedDiagram?.setAttribute('aria-label', label);
+            renderedDiagram?.removeAttribute('height');
+
+            bindFunctions?.(figure);
+            sourceBlock.replaceWith(figure);
+
+            requestAnimationFrame(() => {
+              const overflow = figure.scrollWidth - figure.clientWidth;
+              if (overflow > 0) figure.scrollLeft = overflow / 2;
+            });
+          } catch (error) {
+            sourceBlock.classList.add('mermaid-fallback');
+            console.error('Unable to render Mermaid diagram.', error);
+          }
+        }
+      } catch (error) {
+        mermaidBlocks.forEach((code) => code.parentElement?.classList.add('mermaid-fallback'));
+        console.error('Unable to load Mermaid.', error);
+      }
+    })();
+  }
+</script>

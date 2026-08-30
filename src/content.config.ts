@@ -8,7 +8,9 @@ const frontmatter = z.object({
   tags: z.union([z.string(), z.array(z.string())]).optional(),
   categories: z.union([z.string(), z.array(z.string())]).optional(),
   image: z.string().optional(),
+  imageAlt: z.string().optional(),
   url: z.string().optional(),
+  lang: z.enum(['en', 'fr']).default('en'),
 });
 
 export const collections = {

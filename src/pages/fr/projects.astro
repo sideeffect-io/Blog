@@ -1,11 +1,11 @@
 ---
 import { getEntry, render } from 'astro:content';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { copy } from '../lib/i18n';
-const locale = 'en';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { copy } from '../../lib/i18n';
+const locale = 'fr';
 const text = copy[locale];
-const page = await getEntry('pages', 'projects');
-if (!page) throw new Error('Missing projects page');
+const page = await getEntry('pages', 'fr/projects');
+if (!page) throw new Error('Missing French projects page');
 const { Content } = await render(page);
 ---
 

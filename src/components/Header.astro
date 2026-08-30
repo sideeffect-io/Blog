@@ -1,25 +1,40 @@
 ---
 import Logo from './Logo.astro';
+import type { Locale } from '../lib/i18n';
+import { copy, oppositeLocale, pathForLocale } from '../lib/i18n';
+
+const locale = (Astro.props.locale ?? 'en') as Locale;
 const currentPath = Astro.url.pathname;
+const alternatePath = Astro.props.alternatePath ?? pathForLocale(currentPath, oppositeLocale(locale));
+const text = copy[locale];
 const links = [
-  { href: '/posts/', label: 'Blog' },
-  { href: '/me/', label: 'About' },
-  { href: '/projects/', label: 'Projects' },
+  { href: pathForLocale('/posts/', locale), label: text.navigation.blog },
+  { href: pathForLocale('/me/', locale), label: text.navigation.about },
+  { href: pathForLocale('/projects/', locale), label: text.navigation.projects },
 ];
+const englishPath = locale === 'en' ? currentPath : alternatePath;
+const frenchPath = locale === 'fr' ? currentPath : alternatePath;
 ---
 
 <header class="site-header">
   <div class="header-inner">
-    <Logo />
+    <Logo locale={locale} />
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">
-      <span class="menu-label">Menu</span>
+      <span class="menu-label">{text.navigation.menu}</span>
       <span class="menu-icon" aria-hidden="true"><i></i><i></i></span>
     </button>
-    <nav class="site-nav" id="site-navigation" aria-label="Primary navigation">
+    <nav class="site-nav" id="site-navigation" aria-label={text.navigation.aria}>
       {links.map((link) => (
         <a class:list={{ active: currentPath.startsWith(link.href) }} href={link.href}>{link.label}</a>
       ))}
-      <a class="header-contact" href="mailto:thibault@sideeffect.io">Contact <span aria-hidden="true">↗</span></a>
+      <label class="language-picker">
+        <span>{text.language.label}</span>
+        <select data-language-select aria-label={text.language.label}>
+          <option value="en" data-href={englishPath} selected={locale === 'en'}>{text.language.en}</option>
+          <option value="fr" data-href={frenchPath} selected={locale === 'fr'}>{text.language.fr}</option>
+        </select>
+      </label>
+      <a class="header-contact" href="mailto:thibault@sideeffect.io">{text.navigation.contact} <span aria-hidden="true">↗</span></a>
     </nav>
   </div>
 </header>
@@ -40,6 +55,15 @@ const links = [
   });
 
   navigation?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+  navigation?.querySelector<HTMLSelectElement>('[data-language-select]')?.addEventListener('change', (event) => {
+    const select = event.currentTarget as HTMLSelectElement;
+    const option = select.selectedOptions[0];
+    const target = option?.dataset.href;
+    if (!target) return;
+
+    window.localStorage.setItem('sideeffect.locale', select.value);
+    window.location.assign(target);
+  });
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') closeMenu();
   });

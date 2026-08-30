@@ -1,34 +1,73 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import MermaidRenderer from '../components/MermaidRenderer.astro';
+import type { Locale } from '../lib/i18n';
+import { copy, oppositeLocale, pathForLocale } from '../lib/i18n';
 import '../styles/global.css';
 
-const { title = 'Side Effect — Software architecture for mobile teams', description = 'Side Effect is the software architecture practice of Thibault Wittemberg.' } = Astro.props;
+const locale = (Astro.props.locale ?? 'en') as Locale;
+const text = copy[locale];
+const {
+  title = text.meta.title,
+  description = text.meta.description,
+  image = '/images/brand/side-effect-dark.jpg',
+  type = 'website',
+} = Astro.props;
+const socialImage = image ?? '/images/brand/side-effect-dark.jpg';
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const alternatePath = Astro.props.alternatePath ?? pathForLocale(Astro.url.pathname, oppositeLocale(locale));
+const alternate = new URL(alternatePath, Astro.site);
+const english = locale === 'en' ? canonical : alternate;
+const french = locale === 'fr' ? canonical : alternate;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={locale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#f4f3ef" />
     <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={english} />
+    <link rel="alternate" hreflang="fr" href={french} />
+    <link rel="alternate" hreflang="x-default" href={english} />
     <link rel="icon" href="/favicon.ico" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={type} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content={new URL('/images/brand/side-effect-dark.jpg', Astro.site)} />
+    <meta property="og:locale" content={locale === 'fr' ? 'fr_FR' : 'en_US'} />
+    <meta property="og:locale:alternate" content={locale === 'fr' ? 'en_US' : 'fr_FR'} />
+    <meta property="og:image" content={new URL(socialImage, Astro.site)} />
     <title>{title}</title>
+    <script is:inline define:vars={{ locale, alternatePath }}>
+      (() => {
+        try {
+          const storedLocale = window.localStorage.getItem('sideeffect.locale');
+          const savedLocale = storedLocale === 'en' || storedLocale === 'fr' ? storedLocale : null;
+          const browserLocale = window.navigator.languages?.[0] ?? window.navigator.language;
+          const preferredLocale = browserLocale.toLowerCase().startsWith('fr') ? 'fr' : 'en';
+          const shouldFollowSavedPreference = savedLocale && savedLocale !== locale;
+          const shouldFollowBrowser = !savedLocale && locale === 'en' && preferredLocale === 'fr';
+
+          if (shouldFollowSavedPreference || shouldFollowBrowser) {
+            window.location.replace(`${alternatePath}${window.location.search}${window.location.hash}`);
+          }
+        } catch {
+          // Locale detection is progressive enhancement; the current page remains usable.
+        }
+      })();
+    </script>
     <script is:inline>document.documentElement.classList.add('js');</script>
   </head>
   <body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
-    <Header />
+    <a class="skip-link" href="#main-content">{text.accessibility.skip}</a>
+    <Header locale={locale} alternatePath={alternatePath} />
     <main id="main-content"><slot /></main>
-    <Footer />
+    <Footer locale={locale} />
+    <MermaidRenderer />
     <script>
       const revealTargets = document.querySelectorAll<HTMLElement>('[data-reveal]');
       const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -42,7 +81,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
             (entry.target as HTMLElement).setAttribute('data-visible', '');
             observer.unobserve(entry.target);
           });
-        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+        }, { rootMargin: '0px 0px -8% 0px', threshold: 0 });
 
         revealTargets.forEach((target) => observer.observe(target));
       }

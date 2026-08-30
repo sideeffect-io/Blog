@@ -18,19 +18,22 @@ The first half of my career gave me a strong foundation in Java, object-oriented
 
 I have also spent years building and mentoring native mobile teams. A recurring part of that work has been bringing iOS and Android developers together around shared engineering principles without pretending the two platforms are identical.
 
-Outside client work, I contribute to the Swift community through projects including [RxFlow](https://github.com/RxSwiftCommunity/RxFlow), [Feedbacks](https://github.com/CombineCommunity/Feedbacks), [AsyncStateMachine](https://github.com/sideeffect-io/AsyncStateMachine), [AsyncExtensions](https://github.com/sideeffect-io/AsyncExtensions), and Apple’s [Swift Async Algorithms](https://github.com/apple/swift-async-algorithms).
+Outside client work, I contribute to the Swift community through projects including [RxFlow](https://github.com/RxSwiftCommunity/RxFlow), [Feedbacks](https://github.com/CombineCommunity/Feedbacks), [SwiftStateMachine](https://github.com/sideeffect-io/SwiftStateMachine), [AsyncExtensions](https://github.com/sideeffect-io/AsyncExtensions), and Apple’s [Swift Async Algorithms](https://github.com/apple/swift-async-algorithms).
 
 When I am away from a keyboard, I forge knives, fly drones, and ride along the coast near my home in Normandy.
 
 ## Resume
 
-I’m a software architect and mobile engineer with 25 years of experience in software design, including nearly 15 years focused on native mobile development. My work has moved from Java and web technologies to Swift, Kotlin, functional programming, and state-machine-based architecture.
+I’m a mobile architect and senior iOS engineer with 25 years of experience in software design, including nearly 15 years focused on native mobile development. I design clear, testable, and scalable iOS and Android architectures, help both platform teams share engineering principles without forcing identical implementations, and remain hands-on with Swift, SwiftUI, Swift Concurrency, and Kotlin.
 
-[LinkedIn profile](https://www.linkedin.com/in/twittemb/)
+Alongside architecture and implementation, I am developing an Agentic Mobile Engineering practice for real products. Specialized Architect, Developer, and independent Reviewer agents collaborate through reusable Swift and Kotlin skills, lightweight handoff contracts, verifiable acceptance criteria, and human oversight.
+
+[LinkedIn profile — French and English versions](https://www.linkedin.com/in/twittemb/)
 
 ### What I bring
 
 * **Mobile architecture:** designing native iOS and Android applications, shared architectural principles, and pragmatic migration paths.
+* **Agentic mobile engineering:** building controlled delivery workflows around specialized agents, explicit responsibilities, reusable skills, and executable quality gates.
 * **Functional programming:** using immutability, composition, typed state, and explicit effects to make software safer and easier to test.
 * **Technical leadership:** recruiting, mentoring, and supporting teams through architecture decisions, code reviews, and continuous improvement.
 * **Delivery:** shaping Git and CI/CD practices, testing strategies, monitoring, and the everyday habits that keep teams aligned.
@@ -38,29 +41,49 @@ I’m a software architect and mobile engineer with 25 years of experience in so
 
 ### Selected experience
 
-#### Since September 2024 — Founder, [Carbone Stellaire](https://www.carbonestellaire.fr/)
+#### Since December 2025 — Mobile architect, Agentic Engineering R&D, Side Effect
 
-Alongside software, I run a small craft practice devoted to forging and knife-making. It is another way of working with materials, constraints, patience, and continuous improvement.
+I design and experiment with an agentic engineering system for a supervised-driving platform delivered as two native iOS and Android applications. I create reusable Swift and Kotlin skills, separate Architect, Developer, and independent Reviewer responsibilities, align both platforms through product contracts rather than shared code, and require executable evidence across builds, tests, accessibility, localization, and architecture boundaries.
 
-#### September 2022 – September 2024 — Freelance mobile architect, TouchTunes
+#### March 2026 – May 2026 — Lead Digital Continuity and Manufacturing Engineer, Capgemini
 
-I helped hire and mentor a native mobile team of 15 developers, then brought its iOS and Android contributors together around shared software engineering practices. Reporting directly to the Vice President of Architecture, I worked across Swift, Kotlin, application architecture, CI/CD, monitoring, Git strategy, and testing. I also introduced functional programming and state-machine ideas into everyday development.
+A three-month hybrid role in digital continuity and manufacturing engineering in Cherbourg-en-Cotentin.
 
-#### June 2018 – June 2022 — Team lead and mobile architect, Genetec
+#### August 2022 – March 2026 — Founder and mobile architect, Side Effect
 
-I created Genetec’s mobile department and grew it to eight developers. I built the native team, established its ways of working, and federated iOS and Android developers around shared engineering practices. Alongside leading the team, I developed native applications and shared architectural foundations in Swift, with a focus on unidirectional data flow and state machines.
+I founded a consultancy focused on mobile architectures and the engineering systems that enable teams to evolve them sustainably. My work covered assessment, target architecture, software foundations, SOLID, Clean Architecture, functional programming, unidirectional data flow, state machines, delivery practices, and knowledge transfer.
 
-#### January 2018 – May 2018 — Senior iOS developer, Nuglif
+#### September 2024 – March 2026 — Founder and bladesmith, [Carbone Stellaire](https://www.carbonestellaire.fr/)
 
-Worked on the LaPresse+ iPad application in Swift, including the migration from Objective-C and technical mentoring around reactive programming.
+I founded and ran a handcrafted knife-making workshop covering the complete product lifecycle, from design and hand-forging to branding, e-commerce, customer relationships, and sales.
 
-#### June 2016 – January 2018 — Mobile architect and developer, Savoir Faire Linux
+#### August 2022 – August 2024 — Mobile architect, TouchTunes
 
-Designed and developed mobile products for Walter Surface Technologies, Serti, Betclic, General Electric, and the open-source Jami project. The work covered offline-first React Native, native iOS and Android, Swift, Kotlin, Java, reactive architectures, and team leadership.
+In a two-year engagement reporting directly to the Vice President of Architecture, I built the architecture and engineering system for new iOS and Android applications targeting four million monthly users. I also contributed to recruiting, onboarding, coaching, and training a 15-person mobile engineering group.
 
-#### 2001 – 2016 — Software engineering, architecture, and technical leadership
+#### June 2022 – August 2022 — Lead iOS developer, Back Market
 
-At Sogeti High Tech, LuxMédia, IntuiTouch, CHPC, Euriware, and Cril Technologie, I worked on Android, iOS, Java, J2EE, infrastructure, industrial applications, hospital information systems, connected devices, and enterprise software. These roles gave me the foundation I now bring to mobile architecture: understanding the product, the users, and the system as a whole.
+A short-term role within Back Market’s high-traffic iOS team, developing features with Swift and SwiftUI and contributing to technical decisions and code-quality practices.
+
+#### June 2018 – June 2022 — Mobile team lead, mobile solution architect, and senior iOS developer, Genetec
+
+I created Genetec’s native mobile department and grew it to eight developers. I first established its people, practices, and engineering system, then moved into a cross-functional architecture role focused on unidirectional data flow, functional programming, immutable state, state machines, and reusable foundations in Swift and Kotlin.
+
+#### February 2018 – May 2018 — Mobile architect and senior iOS developer, Nuglif
+
+I worked on the La Presse+ iPad application in Swift, supported its migration from Objective-C, and led technical discussions around architecture, reactive programming, and Git practices.
+
+#### June 2016 – January 2018 — Mobile architect, senior iOS and Android developer, and project director, Savoir-faire Linux
+
+I designed and delivered native and React Native applications across several industries, including Betclic products serving 150,000 monthly users. I also created [RxFlow](https://github.com/RxSwiftCommunity/RxFlow), contributed to the RxSwift community, and established continuous delivery with GitLab CI and Fastlane.
+
+#### November 2014 – May 2016 — Mobile and IoT R&D engineer, Sogeti High Tech
+
+I designed industrial mobility applications and explored smart glasses, voice and gesture recognition, image processing, and real-time communication for an Areva research and development project.
+
+#### December 2012 – June 2014 — Software engineer, Euriware
+
+I developed scientific software and information systems for Total and EDF R&D using Java, OSGi, and Eclipse RCP, with Jenkins and SonarQube supporting integration and code-quality monitoring.
 
 ### Technical focus
 
@@ -68,13 +91,15 @@ At Sogeti High Tech, LuxMédia, IntuiTouch, CHPC, Euriware, and Cril Technologie
 
 **Mobile:** Swift, SwiftUI, UIKit, Objective-C, Kotlin, Java, Android Studio, Xcode, Combine, RxSwift, Kotlin Flow, Swift Concurrency, and Kotlin coroutines.
 
-**Delivery:** Git, GitHub, Gerrit, GitHub Actions, Azure DevOps, Bitrise, Firebase, TestFlight, App Store, and Google Play.
+**Agentic engineering:** OpenAI Codex, reusable Swift and Kotlin skills, separated architecture, implementation, and review responsibilities, lightweight handoffs, and executable quality gates.
+
+**Delivery:** Git, GitHub, GitLab, Gerrit, GitHub Actions, Azure DevOps, Bitrise, Fastlane, Firebase, TestFlight, App Store, and Google Play.
 
 ### Education and languages
 
 * **2018:** Genetec leadership program at HEC Montréal.
-* **2015:** Master 2 in Software Engineering, University of Rouen — highest honors.
-* **2001:** Master’s degree in Mathematical and Computer Science.
+* **2014–2015:** Master 2 in Software Engineering, University of Rouen — highest honors.
+* **1998–2001:** Master’s degree in Mathematics and Computer Science, University of Rouen.
 * **French:** native or bilingual proficiency.
 * **English:** full professional proficiency.
 

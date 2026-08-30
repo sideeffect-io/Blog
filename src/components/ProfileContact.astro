@@ -1,0 +1,36 @@
+---
+import type { Locale } from '../lib/i18n';
+import { copy } from '../lib/i18n';
+
+const locale = (Astro.props.locale ?? 'en') as Locale;
+const text = copy[locale].about;
+---
+
+<nav class="profile-contact" aria-label={text.contactAria}>
+  <span class="profile-contact-heading">{text.contactHeading}</span>
+  <a href="mailto:thibault@sideeffect.io">
+    <span>{text.emailLabel}</span>
+    <strong>thibault@sideeffect.io</strong>
+    <b aria-hidden="true">↗</b>
+  </a>
+  <a
+    href="https://www.linkedin.com/in/twittemb/"
+    target="_blank"
+    rel="me noopener noreferrer"
+    aria-label={`LinkedIn — ${text.newTab}`}
+  >
+    <span>LinkedIn</span>
+    <strong>/in/twittemb</strong>
+    <b aria-hidden="true">↗</b>
+  </a>
+  <a
+    href="https://x.com/sideeffectio"
+    target="_blank"
+    rel="me noopener noreferrer"
+    aria-label={`X, @sideeffectio — ${text.newTab}`}
+  >
+    <span>X</span>
+    <strong>@sideeffectio</strong>
+    <b aria-hidden="true">↗</b>
+  </a>
+</nav>

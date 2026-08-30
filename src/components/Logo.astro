@@ -1,9 +1,13 @@
 ---
+import type { Locale } from '../lib/i18n';
+import { pathForLocale } from '../lib/i18n';
+
 const { compact = false, dark = false } = Astro.props;
+const locale = (Astro.props.locale ?? 'en') as Locale;
 const image = dark ? '/images/brand/side-effect-dark.jpg' : '/images/brand/side-effect-light.jpg';
 ---
 
-<a class:list={['brand', { compact }]} href="/" aria-label="Side Effect home">
+<a class:list={['brand', { compact }]} href={pathForLocale('/', locale)} aria-label={locale === 'fr' ? 'Accueil Side Effect' : 'Side Effect home'}>
   <span class="brand-logo" aria-hidden="true"><img src={image} alt="" /></span>
   <span class="brand-name">Side Effect</span>
 </a>

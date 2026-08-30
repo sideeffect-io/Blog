@@ -1,31 +1,40 @@
 ---
 import Logo from './Logo.astro';
+import type { Locale } from '../lib/i18n';
+import { copy, pathForLocale } from '../lib/i18n';
+
+const locale = (Astro.props.locale ?? 'en') as Locale;
+const text = copy[locale];
 ---
 
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <Logo compact dark />
-      <p class="footer-note">A personal notebook about software, architecture, and the work in between.</p>
+      <Logo compact dark locale={locale} />
+      <p class="footer-note">{text.footer.note}</p>
     </div>
     <div class="footer-invitation">
-      <p class="footer-kicker">Have a difficult mobile problem?</p>
-      <a href="mailto:thibault@sideeffect.io">Let’s talk <span aria-hidden="true">↗</span></a>
+      <p class="footer-kicker">{text.footer.question}</p>
+      <a class="footer-contact-link" href="mailto:thibault@sideeffect.io">
+        <span class="footer-contact-action">{text.footer.talk} <b aria-hidden="true">↗</b></span>
+        <span class="footer-contact-address">thibault@sideeffect.io</span>
+      </a>
     </div>
-    <div class="footer-links" aria-label="Footer links">
+    <div class="footer-links" aria-label={text.footer.aria}>
       <div>
-        <span>Explore</span>
-        <a href="/posts/">Blog</a>
-        <a href="/me/">About</a>
-        <a href="/projects/">Projects</a>
+        <span>{text.footer.explore}</span>
+        <a href={pathForLocale('/posts/', locale)}>{text.navigation.blog}</a>
+        <a href={pathForLocale('/me/', locale)}>{text.footer.about}</a>
+        <a href={pathForLocale('/projects/', locale)}>{text.navigation.projects}</a>
       </div>
       <div>
-        <span>Elsewhere</span>
-        <a href="https://github.com/sideeffect-io" target="_blank" rel="noreferrer">GitHub ↗</a>
-        <a href="/rss.xml">RSS ↗</a>
-        <a href="https://www.linkedin.com/in/twittemb/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        <span>{text.footer.elsewhere}</span>
+        <a href="https://www.linkedin.com/in/twittemb/" target="_blank" rel="me noopener noreferrer" aria-label={`LinkedIn — ${text.footer.newTab}`}>LinkedIn ↗</a>
+        <a href="https://x.com/sideeffectio" target="_blank" rel="me noopener noreferrer" aria-label={`X, @sideeffectio — ${text.footer.newTab}`}>X · @sideeffectio ↗</a>
+        <a href="https://github.com/sideeffect-io" target="_blank" rel="me noopener noreferrer" aria-label={`GitHub — ${text.footer.newTab}`}>GitHub ↗</a>
+        <a href={pathForLocale('/rss.xml', locale)}>RSS ↗</a>
       </div>
     </div>
   </div>
-  <div class="footer-bottom"><span>© {new Date().getFullYear()} Side Effect</span><span>Normandy, France</span></div>
+  <div class="footer-bottom"><span>© {new Date().getFullYear()} Side Effect</span><span>{text.footer.location}</span></div>
 </footer>

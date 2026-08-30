@@ -1,12 +1,12 @@
 ---
 import { getEntry, render } from 'astro:content';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import ProfileContact from '../components/ProfileContact.astro';
-import { copy } from '../lib/i18n';
-const locale = 'en';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProfileContact from '../../components/ProfileContact.astro';
+import { copy } from '../../lib/i18n';
+const locale = 'fr';
 const text = copy[locale];
-const page = await getEntry('pages', 'me');
-if (!page) throw new Error('Missing me page');
+const page = await getEntry('pages', 'fr/me');
+if (!page) throw new Error('Missing French me page');
 const { Content } = await render(page);
 ---
 

@@ -198,6 +198,48 @@ em {
   transform: scaleX(1);
 }
 
+.language-picker {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.language-picker > span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.language-picker::after {
+  position: absolute;
+  right: 0.55rem;
+  color: var(--purple);
+  content: '↓';
+  font: 500 0.62rem var(--mono);
+  pointer-events: none;
+}
+
+.language-picker select {
+  min-height: 40px;
+  padding: 0.55rem 1.55rem 0.55rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  appearance: none;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  font: 500 0.67rem var(--mono);
+  letter-spacing: 0.08em;
+}
+
+.language-picker select:hover {
+  border-color: var(--ink);
+}
+
 .header-contact {
   padding: 0.65rem 0.9rem;
   border: 1px solid var(--ink);
@@ -741,6 +783,32 @@ em {
   color: inherit;
 }
 
+.prose .mermaid-diagram {
+  overflow-x: auto;
+  margin: 2.5rem 0;
+  padding: clamp(1rem, 3vw, 2rem);
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.prose .mermaid-diagram svg {
+  display: block;
+  width: 100%;
+  min-width: 620px;
+  height: auto;
+  margin-inline: auto;
+}
+
+.prose .mermaid-fallback::before {
+  display: block;
+  margin-bottom: 0.75rem;
+  color: #bbb;
+  content: 'Mermaid';
+  font: 500 0.65rem var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .article-nav {
   max-width: 960px;
   display: grid;
@@ -832,6 +900,58 @@ em {
 .about-nav b {
   color: var(--muted);
   font: 0.62rem var(--mono);
+}
+
+.profile-contact {
+  display: grid;
+  margin-top: 2rem;
+  border-top: 1px solid var(--line);
+}
+
+.profile-contact-heading {
+  padding: 1rem 0 0.7rem;
+  color: var(--muted);
+  font: 500 0.62rem var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.profile-contact a {
+  display: grid;
+  grid-template-columns: 4.25rem minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.65rem;
+  min-height: 52px;
+  padding: 0.55rem 0;
+  border-top: 1px solid var(--line);
+  transition: color 0.2s;
+}
+
+.profile-contact a > span {
+  color: var(--muted);
+  font: 500 0.62rem var(--mono);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.profile-contact strong {
+  overflow-wrap: anywhere;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.profile-contact b {
+  color: var(--purple);
+  font: 500 0.7rem var(--mono);
+  transition: transform 0.2s;
+}
+
+.profile-contact a:hover {
+  color: var(--purple);
+}
+
+.profile-contact a:hover b {
+  transform: translate(2px, -2px);
 }
 
 .about-prose > h2:first-child {
@@ -974,15 +1094,32 @@ em {
   color: #8d8b86;
 }
 
-.footer-invitation a {
+.footer-contact-link {
+  display: inline-grid;
+  gap: 0.8rem;
+}
+
+.footer-contact-action {
   font-size: clamp(2rem, 4vw, 3.7rem);
   font-weight: 600;
   line-height: 1;
   letter-spacing: -0.065em;
 }
 
-.footer-invitation a span {
+.footer-contact-action b {
   color: var(--violet);
+  font-weight: inherit;
+}
+
+.footer-contact-address {
+  color: #a8a6a1;
+  font: 500 0.72rem var(--mono);
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+
+.footer-contact-link:hover .footer-contact-address {
+  color: white;
 }
 
 .footer-links {
@@ -1005,6 +1142,9 @@ em {
 }
 
 .footer-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
   color: #d4d2cc;
   font-size: 0.78rem;
 }
@@ -1139,6 +1279,32 @@ em {
     padding-inline: 0.9rem;
     border-bottom: 1px solid var(--ink);
     text-align: center;
+  }
+
+  .language-picker {
+    justify-content: space-between;
+    min-height: 52px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .language-picker > span {
+    position: static;
+    width: auto;
+    height: auto;
+    clip: auto;
+    clip-path: none;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 700;
+    white-space: normal;
+  }
+
+  .language-picker::after {
+    right: 0.7rem;
+  }
+
+  .language-picker select {
+    min-width: 74px;
   }
 
   .hero-grid {
@@ -1306,6 +1472,10 @@ em {
 
   .footer-links {
     margin-top: 3.5rem;
+  }
+
+  .footer-links a {
+    min-height: 44px;
   }
 
   .footer-bottom {

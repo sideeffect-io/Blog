@@ -21,11 +21,11 @@ Combine-inspired operators for Swift asynchronous sequences, designed to make fa
 
 [GitHub ↗](https://github.com/sideeffect-io/AsyncExtensions)
 
-## AsyncStateMachine
+## SwiftStateMachine
 
 A way to structure application features around explicit states, events, and side effects. The goal is to make complex behavior consistent, testable, and scalable.
 
-[GitHub ↗](https://github.com/sideeffect-io/AsyncStateMachine)
+[GitHub ↗](https://github.com/sideeffect-io/SwiftStateMachine)
 
 ## Swift Async Algorithms
 

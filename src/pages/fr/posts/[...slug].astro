@@ -1,15 +1,15 @@
 ---
 import { getCollection, render } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { excerpt, formatDate, imagePath, postPath, postSlug, postsByDate, postsForLocale, readingMinutes, tagsFor } from '../../lib/content';
-import { copy } from '../../lib/i18n';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { excerpt, formatDate, imagePath, postPath, postSlug, postsByDate, postsForLocale, readingMinutes, tagsFor } from '../../../lib/content';
+import { copy } from '../../../lib/i18n';
 
 export async function getStaticPaths() {
-  const posts = postsForLocale(await getCollection('posts'), 'en');
+  const posts = postsForLocale(await getCollection('posts'), 'fr');
   return posts.map((post) => ({ params: { slug: postSlug(post) }, props: { post } }));
 }
 
-const locale = 'en';
+const locale = 'fr';
 const text = copy[locale];
 const { post } = Astro.props;
 const { Content } = await render(post);
@@ -23,9 +23,9 @@ const minutes = readingMinutes(post);
 
 <BaseLayout locale={locale} title={`${post.data.title} — Side Effect`} description={excerpt(post.data.description, 160)} image={imagePath(post.data.image)} type="article">
   <article class="article-page">
-    <header class="article-header"><a class="article-back" href="/posts/">← {text.posts.all}</a><div class="article-meta"><time datetime={post.data.date?.toISOString()}>{formatDate(post.data.date, locale)}</time><span>{tags.join(' · ')}</span><span>{text.posts.minutes(minutes)}</span></div><h1>{post.data.title}</h1>{post.data.description && <p class="article-dek">{excerpt(post.data.description, 300)}</p>}</header>
+    <header class="article-header"><a class="article-back" href="/fr/posts/">← {text.posts.all}</a><div class="article-meta"><time datetime={post.data.date?.toISOString()}>{formatDate(post.data.date, locale)}</time><span>{tags.join(' · ')}</span><span>{text.posts.minutes(minutes)}</span></div><h1>{post.data.title}</h1>{post.data.description && <p class="article-dek">{excerpt(post.data.description, 300)}</p>}</header>
     {imagePath(post.data.image) && <figure class="article-hero"><img src={imagePath(post.data.image)} alt={post.data.imageAlt ?? ''} /></figure>}
-    <div class="article-layout"><aside class="article-aside"><a href="/posts/">← {text.posts.all}</a><span>{text.posts.share}</span><a href={`mailto:?subject=${encodeURIComponent(post.data.title)}&body=${encodeURIComponent(Astro.url.href)}`}>{text.posts.email} ↗</a></aside><div class="prose"><Content /></div></div>
+    <div class="article-layout"><aside class="article-aside"><a href="/fr/posts/">← {text.posts.all}</a><span>{text.posts.share}</span><a href={`mailto:?subject=${encodeURIComponent(post.data.title)}&body=${encodeURIComponent(Astro.url.href)}`}>{text.posts.email} ↗</a></aside><div class="prose"><Content /></div></div>
     <nav class="article-nav" aria-label={text.posts.navigationAria}>{previous ? <a href={postPath(previous, locale)}><span>{text.posts.previous}</span><strong>← {previous.data.title}</strong></a> : <span></span>}{next ? <a class="next" href={postPath(next, locale)}><span>{text.posts.next}</span><strong>{next.data.title} →</strong></a> : <span></span>}</nav>
   </article>
 </BaseLayout>

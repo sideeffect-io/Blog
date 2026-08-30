@@ -1,4 +1,6 @@
 import type { CollectionEntry } from 'astro:content';
+import type { Locale } from './i18n';
+import { pathForLocale } from './i18n';
 
 export type Post = CollectionEntry<'posts'>;
 
@@ -8,6 +10,10 @@ export function postsByDate(posts: Post[]) {
     const right = b.data.date?.getTime() ?? 0;
     return right - left;
   });
+}
+
+export function postsForLocale(posts: Post[], locale: Locale) {
+  return posts.filter((post) => post.data.lang === locale);
 }
 
 export function tagsFor(post: Post) {
@@ -21,15 +27,19 @@ export function postSlug(post: Post) {
   return post.id.replace(/\.md$/, '').split('/').at(-1) ?? post.id;
 }
 
+export function postPath(post: Post, locale: Locale) {
+  return pathForLocale(`/posts/${postSlug(post)}/`, locale);
+}
+
 export function imagePath(image?: string) {
   if (!image) return undefined;
   const normalized = image.replace(/^\/?i\//, 'images/').replace(/^\/?/, '/');
   return normalized.startsWith('/images/') ? normalized : `/images/${normalized}`;
 }
 
-export function formatDate(date?: Date) {
+export function formatDate(date: Date | undefined, locale: Locale) {
   if (!date) return '';
-  return new Intl.DateTimeFormat('en-US', { dateStyle: 'long' }).format(date);
+  return new Intl.DateTimeFormat(locale === 'fr' ? 'fr-FR' : 'en-US', { dateStyle: 'long' }).format(date);
 }
 
 export function excerpt(text?: string, maximumLength = 220) {

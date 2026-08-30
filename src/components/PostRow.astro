@@ -1,24 +1,30 @@
 ---
 import type { Post } from '../lib/content';
-import { excerpt, formatDate, postSlug, readingMinutes, tagsFor } from '../lib/content';
+import { excerpt, formatDate, postPath, readingMinutes, tagsFor } from '../lib/content';
+import type { Locale } from '../lib/i18n';
+import { copy } from '../lib/i18n';
 const { post, featured = false, excerptLength = 220 } = Astro.props as {
   post: Post;
   featured?: boolean;
   excerptLength?: number;
+  locale?: Locale;
 };
+const locale = (Astro.props.locale ?? 'en') as Locale;
+const text = copy[locale];
 const tags = tagsFor(post);
 const minutes = readingMinutes(post);
+const href = postPath(post, locale);
 ---
 
 <article class:list={['post-row', { featured }]}>
   <div class="post-row-meta">
-    <time datetime={post.data.date?.toISOString()}>{formatDate(post.data.date)}</time>
-    <span>{tags[0] ?? 'Architecture'}</span>
-    <span class="reading-time">{minutes} min read</span>
+    <time datetime={post.data.date?.toISOString()}>{formatDate(post.data.date, locale)}</time>
+    <span>{tags[0] ?? text.posts.fallbackTag}</span>
+    <span class="reading-time">{text.posts.minutes(minutes)}</span>
   </div>
   <div class="post-row-content">
-    <h3><a href={`/posts/${postSlug(post)}/`}>{post.data.title}</a></h3>
+    <h3><a href={href}>{post.data.title}</a></h3>
     {post.data.description && <p>{excerpt(post.data.description, excerptLength)}</p>}
   </div>
-  <a class="arrow-link" href={`/posts/${postSlug(post)}/`} aria-label={`Read ${post.data.title}`}>↗</a>
+  <a class="arrow-link" href={href} aria-label={text.posts.readAria(post.data.title)}>↗</a>
 </article>
